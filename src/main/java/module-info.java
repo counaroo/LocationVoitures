@@ -6,6 +6,6 @@ module com.couro.sadio.locationvoitures.locationvoitures {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.couro.sadio.locationvoitures.locationvoitures to javafx.fxml;
-    exports com.couro.sadio.locationvoitures.locationvoitures;
+    opens com.couro.sadio.locationvoitures to javafx.fxml;
+    exports com.couro.sadio.locationvoitures;
 }

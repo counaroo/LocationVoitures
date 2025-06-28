@@ -1,4 +1,4 @@
-package com.couro.sadio.locationvoitures.locationvoitures;
+package com.couro.sadio.locationvoitures;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
