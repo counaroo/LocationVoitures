@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
     <session-factory>
         <!-- Configuration de la base de données -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/location_db?serverTimezone=UTC</property>
-        <property name="hibernate.connection.username">username</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/location_db?serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</property>
+        <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
 
+        <!-- Pool de connexions -->
+        <property name="hibernate.connection.pool_size">10</property>
+
         <!-- Autres propriétés -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Configuration des sessions -->
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Mapping des entités-->
-        <mapping class="com.example.VotreEntite"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Utilisateur"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Administrateur"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Employe"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Client"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Reservation"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Vehicule"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Chauffeur"/>
+
     </session-factory>
 </hibernate-configuration>

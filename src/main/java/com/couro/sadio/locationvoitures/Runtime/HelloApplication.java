@@ -1,4 +1,4 @@
-package com.couro.sadio.locationvoitures;
+package com.couro.sadio.locationvoitures.Runtime;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

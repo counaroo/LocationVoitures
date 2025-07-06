@@ -5,12 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/Testeur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/IDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateAdminDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateChauffeurDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateClientDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateEmployeeDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateObjectDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateReservationDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateVehiculeDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/data/HibernateConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Administrateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Chauffeur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Employe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Utilisateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Vehicule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/exception/DAOException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/AbstractAppFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/AdminFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/ChauffeurFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/ClientFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/ConcreteFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/EmployeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/HibernateAppFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/ReservationFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/factory/VehiculeFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,22 +67,50 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2z4CzqgPU9BwbhbK5McA5M8EwaN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HelloApplication.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/LocationVoitures",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.Main" />
+      <module name="LocationVoitures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.couro.sadio.locationvoitures.Runtime.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
