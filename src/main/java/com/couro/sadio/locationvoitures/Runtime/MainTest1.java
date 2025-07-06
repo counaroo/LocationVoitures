@@ -3,15 +3,16 @@ package com.couro.sadio.locationvoitures.Runtime;
 import com.couro.sadio.locationvoitures.entities.Administrateur;
 import com.couro.sadio.locationvoitures.entities.Role;
 
-public class Main {
+public class MainTest1 {
     public static void main(String[] args) {
         //testerCreationAdmin();
         //testerReadAdmin();
         //testerUpdateAdmin();
-        testerDeleteAdmin();
+        //testerDeleteAdmin();
         testerListerAdmin();
     }
 
+    //Admin test
     public static void testerCreationAdmin(){
         Testeur testeur = new Testeur();
 
