@@ -13,7 +13,7 @@ public class Client extends Utilisateur{
 
     private  String adresse;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
     private List<Reservation> reservations = new ArrayList<>();
 
     //Constructeur
@@ -68,5 +68,10 @@ public class Client extends Utilisateur{
 
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
+    }
+
+    public void addReservation(Reservation reservation){
+        reservations.add(reservation);
+        reservation.setClient(this);
     }
 }
