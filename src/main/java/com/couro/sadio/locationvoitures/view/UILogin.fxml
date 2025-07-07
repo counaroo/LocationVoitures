@@ -9,39 +9,53 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="356.0" prefWidth="670.0" style="-fx-background-color: F6F6F8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.UILoginController">
    <children>
-      <ImageView fitHeight="395.0" fitWidth="541.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="413.0" fitWidth="316.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@ImageLogin.png" />
+            <Image url="@images/ImageLogo1.1.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="335.0" layoutY="29.0" prefHeight="330.0" prefWidth="298.0" style="-fx-background-color: F9DC55; -fx-background-radius: 20;">
+      <AnchorPane layoutX="315.0" prefHeight="394.0" prefWidth="354.0" style="-fx-background-color: white;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="14.0" text="Authentification" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="14.0" text="Authentification" textAlignment="CENTER" textFill="#9ca2b0">
                <font>
                   <Font name="Arial Black" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="71.0" text="Login" textFill="WHITE">
+            <Label layoutX="26.0" layoutY="62.0" text="Login" textFill="#3c8fb2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="26.0" layoutY="98.0" prefHeight="38.0" prefWidth="250.0" />
-            <Label layoutX="26.0" layoutY="158.0" text="Password" textFill="WHITE">
+            <TextField fx:id="loginFiled" layoutX="26.0" layoutY="99.0" prefHeight="38.0" prefWidth="291.0" />
+            <Label layoutX="26.0" layoutY="150.0" text="Password" textFill="#3c8fb2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <PasswordField layoutX="26.0" layoutY="185.0" prefHeight="38.0" prefWidth="250.0" />
-            <Button layoutX="29.0" layoutY="262.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: D92B25;" text="Login" textFill="WHITE">
+            <PasswordField fx:id="passwordField" layoutX="26.0" layoutY="185.0" prefHeight="38.0" prefWidth="291.0" />
+            <Button fx:id="loginButton" layoutX="26.0" layoutY="252.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="291.0" style="-fx-background-color: #3c8fb2;" text="Login" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="75.0" prefHeight="39.0" prefWidth="291.0" text="Location de voiture" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="141.0" prefHeight="27.0" prefWidth="173.0" text="De la citadine au SUV" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutY="169.0" prefHeight="27.0" prefWidth="326.0" text=" trouvez votre compagnon de route idéal" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

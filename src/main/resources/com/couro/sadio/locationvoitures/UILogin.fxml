@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="395.0" fitWidth="541.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../java/com/couro/sadio/locationvoitures/view/ImageLogin.png" />
+            <Image url="@view/images/ImageLogin.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="335.0" layoutY="29.0" prefHeight="330.0" prefWidth="298.0" style="-fx-background-color: F9DC55; -fx-background-radius: 20;">

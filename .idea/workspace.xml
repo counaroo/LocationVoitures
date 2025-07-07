@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UILoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/ImageLogin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/UILogin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/locationvoitures/UILogin.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIAdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIEmployeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/UIAdmin.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/UIClient.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/UIEmploye.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/images/ImageLogo1.1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/ImageLogin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/images/ImageLogin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/UILogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/view/UILogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/locationvoitures/UILogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/locationvoitures/UILogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +65,19 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "298",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/LocationVoitures/src/main/resources/com/couro/sadio/locationvoitures",
+    "last_opened_file_path": "C:/LocationVoitures/src/main/java/com/couro/sadio/locationvoitures/view/images",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view\images" />
       <recent name="C:\LocationVoitures\src\main\resources\com\couro\sadio\locationvoitures" />
       <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view" />
+      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view\images" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainTest2">
