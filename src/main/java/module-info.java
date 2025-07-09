@@ -12,6 +12,7 @@ module com.couro.sadio.locationvoitures.locationvoitures {
     opens com.couro.sadio.locationvoitures.entities to org.hibernate.orm.core;
 
     opens com.couro.sadio.locationvoitures to javafx.fxml;
+    opens com.couro.sadio.locationvoitures.controller to javafx.fxml;
     exports com.couro.sadio.locationvoitures;
     exports com.couro.sadio.locationvoitures.data;
     opens com.couro.sadio.locationvoitures.data to javafx.fxml;

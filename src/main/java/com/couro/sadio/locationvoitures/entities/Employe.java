@@ -1,8 +1,12 @@
 package com.couro.sadio.locationvoitures.entities;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-@Entity(name = "employes")
+@Entity
+@Table(name = "employes")
+@DiscriminatorValue("EMPLOYE")
 public class Employe extends Utilisateur{
     private String numeroEmploye;
 

@@ -5,7 +5,7 @@ import com.couro.sadio.locationvoitures.entities.Role;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        //testerCreationAdmin();
+        testerCreationAdmin();
         //testerReadAdmin();
         //testerUpdateAdmin();
         //testerDeleteAdmin();
@@ -16,7 +16,7 @@ public class MainTest1 {
     public static void testerCreationAdmin(){
         Testeur testeur = new Testeur();
 
-        Administrateur administrateur = new Administrateur("Sambe","Aziz",761254040, Role.ADMIN,"admin","passer");
+        Administrateur administrateur = new Administrateur("Sadio","Mohamed",760121099, Role.ADMIN,"admin","passer");
         testeur.creerAdmin(administrateur);
     }
 

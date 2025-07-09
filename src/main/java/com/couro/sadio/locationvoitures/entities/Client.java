@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "clients")
+@Entity
+@Table(name = "clients")
+@DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur{
     private String email;
 

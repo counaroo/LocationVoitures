@@ -25,6 +25,9 @@ public class ConcreteFactory {
         else if (factoryClass == VehiculeFactory.class) {
             return factoryClass.cast(appFactory.getVehiculeFactory());
         }
+        else if (factoryClass == UtilisateurFactory.class) {
+            return factoryClass.cast(appFactory.getUtilisateurFactory());
+        }
 
         return null;
     }

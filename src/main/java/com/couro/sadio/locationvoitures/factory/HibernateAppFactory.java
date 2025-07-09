@@ -82,4 +82,17 @@ public class HibernateAppFactory extends AbstractAppFactory{
             }
         };
     }
+
+    @Override
+    public UtilisateurFactory getUtilisateurFactory() {
+        return new UtilisateurFactory() {
+            @Override
+            public IDao<Utilisateur> getUtilisateur(Class<? extends IDao<Utilisateur>> daoUtilisateur) {
+                if (daoUtilisateur == HibernateUserDaoImpl.class) {
+                    return new HibernateUserDaoImpl(Utilisateur.class);
+                }
+                return null;
+            }
+        };
+    }
 }

@@ -2,7 +2,9 @@ package com.couro.sadio.locationvoitures.entities;
 
 import jakarta.persistence.*;
 
-@Entity(name="administrateurs")
+@Entity
+@Table(name = "administrateurs")
+@DiscriminatorValue("ADMIN")
 public class Administrateur extends Utilisateur{
     public Administrateur() {
     }

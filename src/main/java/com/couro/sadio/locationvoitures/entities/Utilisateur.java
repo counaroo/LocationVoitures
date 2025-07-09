@@ -3,7 +3,9 @@ package com.couro.sadio.locationvoitures.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "utilisateurs")
+@DiscriminatorColumn(name = "type_utilisateur")
 public abstract class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,11 +18,13 @@ public abstract class Utilisateur {
 
     private int telephone;
 
+    @Enumerated(EnumType.STRING)  // ← Ajoutez cette annotation
+    @Column(name = "role")
     private Role role;
 
     private String login;
 
-    private String motDePasse;
+    private String password;
 
     //Constructeur
     public Utilisateur() {
@@ -32,7 +36,7 @@ public abstract class Utilisateur {
         this.telephone = telephone;
         this.role = role;
         this.login = login;
-        this.motDePasse = motDePasse;
+        this.password = motDePasse;
     }
 
     public Utilisateur(int id, String nom, String prenom,int telephone, Role role, String login, String motDePasse) {
@@ -42,7 +46,7 @@ public abstract class Utilisateur {
         this.telephone = telephone;
         this.role = role;
         this.login = login;
-        this.motDePasse = motDePasse;
+        this.password = motDePasse;
     }
 
     //Getter and Setter
@@ -96,10 +100,10 @@ public abstract class Utilisateur {
     }
 
     public String getMotDePasse() {
-        return motDePasse;
+        return password;
     }
 
     public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
+        this.password = motDePasse;
     }
 }
