@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionChauffeurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionEmployeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionParcAutoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionChauffeur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionClient.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionEmploye.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionParcAuto.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/UIDashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIClient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UILoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UILoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIAdmin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

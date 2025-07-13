@@ -34,12 +34,12 @@
          <children>
             <VBox alignment="TOP_CENTER" layoutX="-2.0" prefHeight="456.0" prefWidth="150.0" spacing="10.0" style="-fx-background-color: white;">
                <children>
-                  <Label fx:id="userName" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="\@Username" textAlignment="CENTER" textFill="#3c8fb2">
+                  <Label fx:id="userName" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="\@Username" textAlignment="CENTER" textFill="#3c8fb2">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="role" prefHeight="26.0" prefWidth="66.0" text="\@Role" textFill="#3c8fb2">
+                  <Label fx:id="role" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="86.0" text="\@Role" textAlignment="CENTER" textFill="#3c8fb2">
                      <font>
                         <Font size="16.0" />
                      </font>
