@@ -41,7 +41,7 @@ public class UILoginController {
                     case ADMIN ->
                             navigateToInterface(actionEvent, "/com/couro/sadio/view/UIAdmin.fxml", "Administration", user);
                     case EMPLOYE ->
-                            navigateToInterface(actionEvent, "/com/couro/sadio/view/UIEploye.fxml", "Employe", user);
+                            navigateToInterface(actionEvent, "/com/couro/sadio/view/UIAdmin.fxml", "Employe", user);
                     case CLIENT ->
                             navigateToInterface(actionEvent, "/com/couro/sadio/view/UIClient.fxml", "Client", user);
                 }
