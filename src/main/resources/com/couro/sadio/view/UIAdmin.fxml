@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="499.0" prefWidth="803.0" style="-fx-background-color: F5F7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.UIAdminController">
+<BorderPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: F5F7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.UIAdminController">
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="725.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </center>
@@ -32,7 +32,7 @@
    <left>
       <Pane prefHeight="378.0" prefWidth="146.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="-2.0" prefHeight="456.0" prefWidth="150.0" spacing="10.0" style="-fx-background-color: white;">
+            <VBox alignment="TOP_CENTER" layoutX="-2.0" prefHeight="556.0" prefWidth="150.0" spacing="10.0" style="-fx-background-color: white;">
                <children>
                   <Label fx:id="userName" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="\@Username" textAlignment="CENTER" textFill="#3c8fb2">
                      <font>

@@ -9,7 +9,7 @@ import com.couro.sadio.locationvoitures.modele.EmployeModele;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testerDeleteEmploye();
+        testerCreerClient();
 
     }
 
@@ -45,9 +45,16 @@ public class MainTest1 {
 
     //Client test
     public static void testerCreerClient(){
-        Client client = new Client("Gueye","Sidy",760121099, Role.CLIENT,"client","passer","sidy@gmail.com",0,"Point E");
+        Client client = new Client("Sadio","Abdoul Aziz",778392552, Role.CLIENT,"client1","passer","AbdoulAzizSadio@gmail.com",0,"Mariste");
+        Client client1 = new Client("Faye","Mariama",774101299, Role.CLIENT,"client2","passer","Mariama@gmail.com",0,"Rufisque");
+        Client client2 = new Client("Sambe","Abdoul Aziz",771236910, Role.CLIENT,"client3","passer","AbdoulAzizSambe@gmail.com",0,"Thies");
+        Client client3 = new Client("Samb","ibrahima",771234567, Role.CLIENT,"client4","passer","Ibrahima@gmail.com",0,"Mariste");
+
         ClientModele clientModele = new ClientModele();
         clientModele.create(client);
+        clientModele.create(client1);
+        clientModele.create(client2);
+        clientModele.create(client3);
         clientModele.lister();
     }
 

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionClientController">
+    <children>
+        <!-- Header -->
+        <Label contentDisplay="CENTER" layoutX="400.0" layoutY="14.0" text="Gestion des Clients" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <!-- Section de recherche et filtres -->
+        <HBox layoutX="20.0" layoutY="60.0" spacing="15.0">
+            <children>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Rechercher par nom/prénom:" />
+                        <TextField fx:id="txtRecherche" promptText="Saisir nom ou prénom..." prefWidth="200.0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Filtrer par email:" />
+                        <TextField fx:id="txtFiltreEmail" promptText="Saisir email..." prefWidth="200.0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Points de fidélité min:" />
+                        <TextField fx:id="txtPointsMin" promptText="0" prefWidth="120.0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="" />
+                        <Button fx:id="btnRechercher" onAction="#rechercherClient" text="Rechercher" prefWidth="100.0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="" />
+                        <Button fx:id="btnReset" onAction="#resetFilters" text="Réinitialiser" prefWidth="100.0" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- Boutons d'actions principales -->
+        <HBox layoutX="20.0" layoutY="140.0" spacing="10.0">
+            <children>
+                <Button fx:id="btnAjouter" onAction="#ajouterClient" text="Ajouter Client" prefWidth="120.0" styleClass="btn-primary" />
+                <Button fx:id="btnModifier" onAction="#modifierClient" text="Modifier" prefWidth="100.0" disable="true" />
+                <Button fx:id="btnSupprimer" onAction="#supprimerClient" text="Supprimer" prefWidth="100.0" disable="true" styleClass="btn-danger" />
+                <Button fx:id="btnVoirReservations" onAction="#voirReservations" text="Voir Réservations" prefWidth="140.0" disable="true" />
+                <Button fx:id="btnExporter" onAction="#exporterClients" text="Exporter" prefWidth="100.0" />
+                <Button fx:id="btnActualiser" onAction="#actualiserListe" text="Actualiser" prefWidth="100.0" />
+            </children>
+        </HBox>
+
+        <!-- Tableau des clients -->
+        <TableView fx:id="tableClients" layoutX="20.0" layoutY="180.0" prefHeight="350.0" prefWidth="960.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colNom" prefWidth="120.0" text="Nom" />
+                <TableColumn fx:id="colPrenom" prefWidth="120.0" text="Prénom" />
+                <TableColumn fx:id="colEmail" prefWidth="180.0" text="Email" />
+                <TableColumn fx:id="colTelephone" prefWidth="120.0" text="Téléphone" />
+                <TableColumn fx:id="colAdresse" prefWidth="200.0" text="Adresse" />
+                <TableColumn fx:id="colPointsFidelite" prefWidth="100.0" text="Points Fidélité" />
+                <TableColumn fx:id="colNbReservations" prefWidth="70.0" text="Nb Rés." />
+            </columns>
+        </TableView>
+
+        <!-- Statistiques -->
+        <HBox layoutX="20.0" layoutY="550.0" spacing="30.0">
+            <children>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Statistiques:" style="-fx-font-weight: bold;" />
+                        <Label fx:id="lblTotalClients" text="Total clients: 0" />
+                        <Label fx:id="lblClientsActifs" text="Clients actifs: 0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Points de fidélité:" style="-fx-font-weight: bold;" />
+                        <Label fx:id="lblPointsMoyens" text="Points moyens: 0" />
+                        <Label fx:id="lblPointsTotal" text="Points total: 0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Réservations:" style="-fx-font-weight: bold;" />
+                        <Label fx:id="lblTotalReservations" text="Total réservations: 0" />
+                        <Label fx:id="lblReservationsMoyennes" text="Réservations/client: 0" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- Actions rapides -->
+        <VBox layoutX="20.0" layoutY="620.0" spacing="10.0">
+            <children>
+                <Label text="Actions rapides:" style="-fx-font-weight: bold;" />
+                <HBox spacing="10.0">
+                    <children>
+                        <Button fx:id="btnTopClients" onAction="#afficherTopClients" text="Top Clients" prefWidth="100.0" />
+                        <Button fx:id="btnClientsInactifs" onAction="#afficherClientsInactifs" text="Clients Inactifs" prefWidth="120.0" />
+                        <Button fx:id="btnEnvoyerEmail" onAction="#envoyerEmailMasse" text="Email groupé" prefWidth="100.0" />
+                        <Button fx:id="btnGererFidelite" onAction="#gererPointsFidelite" text="Gérer Fidélité" prefWidth="120.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Barre de statut -->
+        <HBox layoutX="20.0" layoutY="670.0" prefWidth="960.0" style="-fx-background-color: #f0f0f0; -fx-padding: 5;">
+            <children>
+                <Label fx:id="lblStatut" text="Prêt" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblDerniereMaj" text="Dernière mise à jour: --:--" />
+            </children>
+        </HBox>
+
+    </children>
+</AnchorPane>
