@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/couro/sadio/view/UILogin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/couro/sadio/view/UILogin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Location de voiture");
         stage.setScene(scene);

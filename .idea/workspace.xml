@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,9 +73,9 @@
       <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.HelloApplication" />
+  <component name="RunManager" selected="Application.MainApplication">
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.MainApplication" />
       <module name="LocationVoitures" />
       <extension name="coverage">
         <pattern>
@@ -115,7 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainTest1" />
         <item itemvalue="Application.MainTest2" />
       </list>
