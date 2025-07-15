@@ -8,6 +8,7 @@ module com.couro.sadio.locationvoitures.locationvoitures {
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
     requires java.naming;
+    requires java.desktop;
 
     // Ouvrir entities à la fois à Hibernate et JavaFX Base
     opens com.couro.sadio.locationvoitures.entities to org.hibernate.orm.core, javafx.base;

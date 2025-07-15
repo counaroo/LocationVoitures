@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionClientController">
    <children>
       <!-- Header -->
-      <Label contentDisplay="CENTER" layoutX="320.0" layoutY="15.0" text="Gestion des Clients" textAlignment="CENTER">
+      <Label contentDisplay="CENTER" layoutX="320.0" layoutY="15.0" text="Gestion des Clients" textAlignment="CENTER" textFill="#9ca2b0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

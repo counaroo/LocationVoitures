@@ -7,9 +7,14 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -221,9 +226,35 @@ public class GestionClientController implements Initializable {
 
     @FXML
     private void ajouterClient() {
-        // TODO: Ouvrir une fenêtre de dialogue pour ajouter un client
-        mettreAJourStatut("Fonction d'ajout de client à implémenter");
-        afficherInfo("Information", "Fonctionnalité d'ajout de client à implémenter");
+        try {
+            // Charger le fichier FXML de la fenêtre FormClient
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/couro/sadio/view/AdminWindows/FormClient.fxml"));
+            Parent root = loader.load();
+
+            // Obtenir le contrôleur de FormClient
+            FormClientController controller = loader.getController();
+
+            // Définir le titre du formulaire
+            controller.setTitleForm("Formulaire d'ajout");
+
+            // Créer une nouvelle fenêtre (Stage)
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter un client");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL); // Fenêtre modale
+            stage.initOwner(btnAjouter.getScene().getWindow()); // Fenêtre parent
+
+            // Afficher la fenêtre et attendre qu'elle se ferme
+            stage.showAndWait();
+
+            // Actualiser la liste après fermeture (au cas où un client aurait été ajouté)
+            chargerDonnees();
+            mettreAJourStatut("Fenêtre d'ajout de client fermée");
+
+        } catch (Exception e) {
+            mettreAJourStatut("Erreur lors de l'ouverture du formulaire");
+            afficherAlerte("Erreur", "Impossible d'ouvrir le formulaire d'ajout: " + e.getMessage());
+        }
     }
 
     @FXML
