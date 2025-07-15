@@ -227,24 +227,15 @@ public class GestionClientController implements Initializable {
     @FXML
     private void ajouterClient() {
         try {
-            // Charger le fichier FXML de la fenêtre FormClient
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/couro/sadio/view/AdminWindows/FormClient.fxml"));
             Parent root = loader.load();
 
-            // Obtenir le contrôleur de FormClient
-            FormClientController controller = loader.getController();
-
-            // Définir le titre du formulaire
-            controller.setTitleForm("Formulaire d'ajout");
-
-            // Créer une nouvelle fenêtre (Stage)
             Stage stage = new Stage();
-            stage.setTitle("Ajouter un client");
+            stage.setTitle("Ajout Client");
+            FormClientController controller = loader.getController();
+            controller.setTitleForm("Formulaire d'ajout");
             stage.setScene(new Scene(root));
-            stage.initModality(Modality.WINDOW_MODAL); // Fenêtre modale
-            stage.initOwner(btnAjouter.getScene().getWindow()); // Fenêtre parent
-
-            // Afficher la fenêtre et attendre qu'elle se ferme
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
 
             // Actualiser la liste après fermeture (au cas où un client aurait été ajouté)
@@ -252,19 +243,49 @@ public class GestionClientController implements Initializable {
             mettreAJourStatut("Fenêtre d'ajout de client fermée");
 
         } catch (Exception e) {
-            mettreAJourStatut("Erreur lors de l'ouverture du formulaire");
-            afficherAlerte("Erreur", "Impossible d'ouvrir le formulaire d'ajout: " + e.getMessage());
+            showError("Erreur lors du chargement de l'interface: " + e.getMessage());
+            e.printStackTrace();
         }
+    }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur de connexion");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     @FXML
     private void modifierClient() {
         Client clientSelectionne = tableClients.getSelectionModel().getSelectedItem();
         if (clientSelectionne != null) {
-            // TODO: Ouvrir une fenêtre de dialogue pour modifier le client
-            mettreAJourStatut("Fonction de modification de client à implémenter");
-            afficherInfo("Information", "Fonctionnalité de modification de client à implémenter\nClient sélectionné: " +
-                    clientSelectionne.getNom() + " " + clientSelectionne.getPrenom());
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/couro/sadio/view/AdminWindows/FormClient.fxml"));
+                Parent root = loader.load();
+
+                Stage stage = new Stage();
+                stage.setTitle("Modifier Client");
+
+                // Récupération du contrôleur et configuration
+                FormClientController controller = loader.getController();
+                controller.setTitleForm("Formulaire de modification");
+                controller.setClientAModifier(clientSelectionne); // Passer le client à modifier
+
+                stage.setScene(new Scene(root));
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.showAndWait();
+
+                // Actualiser la liste après fermeture
+                chargerDonnees();
+                mettreAJourStatut("Client modifié avec succès");
+
+            } catch (Exception e) {
+                showError("Erreur lors du chargement de l'interface: " + e.getMessage());
+                e.printStackTrace();
+            }
+        } else {
+            afficherInfo("Information", "Veuillez sélectionner un client à modifier");
         }
     }
 

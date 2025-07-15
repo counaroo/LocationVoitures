@@ -13,11 +13,13 @@ module com.couro.sadio.locationvoitures.locationvoitures {
     // Ouvrir entities à la fois à Hibernate et JavaFX Base
     opens com.couro.sadio.locationvoitures.entities to org.hibernate.orm.core, javafx.base;
 
+    opens com.couro.sadio.view to javafx.fxml;
     opens com.couro.sadio.locationvoitures to javafx.fxml;
     opens com.couro.sadio.locationvoitures.controller to javafx.fxml;
     opens com.couro.sadio.locationvoitures.controller.adminControllers to javafx.fxml;
     opens com.couro.sadio.locationvoitures.data to javafx.fxml;
     opens com.couro.sadio.locationvoitures.Runtime to javafx.fxml;
+    opens com.couro.sadio.view.AdminWindows to javafx.fxml;
 
     exports com.couro.sadio.locationvoitures;
     exports com.couro.sadio.locationvoitures.data;

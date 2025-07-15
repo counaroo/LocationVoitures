@@ -10,6 +10,7 @@ import com.couro.sadio.locationvoitures.modele.EmployeModele;
 public class MainTest1 {
     public static void main(String[] args) {
         testerCreerClient();
+        testerEmploye();
 
     }
 
