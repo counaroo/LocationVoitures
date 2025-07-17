@@ -13,7 +13,7 @@ public class Vehicule {
 
     private  String modele;
 
-    private String tarif;
+    private int tarif;
 
     private Boolean dispo;
 
@@ -22,7 +22,7 @@ public class Vehicule {
     public Vehicule() {
     }
 
-    public Vehicule(String marque, String modele, String tarif, Boolean dispo, String immatriculation) {
+    public Vehicule(String marque, String modele, int tarif, Boolean dispo, String immatriculation) {
         this.marque = marque;
         this.modele = modele;
         this.tarif = tarif;
@@ -30,7 +30,7 @@ public class Vehicule {
         this.immatriculation = immatriculation;
     }
 
-    public Vehicule(int id, String marque, String modele, String tarif, Boolean dispo, String immatriculation) {
+    public Vehicule(int id, String marque, String modele, int tarif, Boolean dispo, String immatriculation) {
         this.id = id;
         this.marque = marque;
         this.modele = modele;
@@ -63,11 +63,11 @@ public class Vehicule {
         this.modele = modele;
     }
 
-    public String getTarif() {
+    public int getTarif() {
         return tarif;
     }
 
-    public void setTarif(String tarif) {
+    public void setTarif(int tarif) {
         this.tarif = tarif;
     }
 

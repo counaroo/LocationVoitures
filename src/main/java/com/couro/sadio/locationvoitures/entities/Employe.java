@@ -22,10 +22,6 @@ public class Employe extends Utilisateur{
         this.numeroEmploye = numeroEmploye;
     }
 
-    public Employe(String nom, String prenom, int telephone, Role role, String login, String motDePasse) {
-        super(nom, prenom, telephone, role, login, motDePasse);
-    }
-
     public String getNumeroEmploye() {
         return numeroEmploye;
     }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionClientController">
+<AnchorPane prefHeight="600.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionClientController">
    <children>
       <!-- Header -->
       <Label contentDisplay="CENTER" layoutX="320.0" layoutY="15.0" text="Gestion des Clients" textAlignment="CENTER" textFill="#9ca2b0">
@@ -54,14 +54,15 @@
       </HBox>
 
       <!-- Tableau des clients -->
-      <TableView fx:id="tableClients" layoutX="20.0" layoutY="165.0" prefHeight="280.0" prefWidth="814.0">
+      <TableView fx:id="tableClients" layoutX="20.0" layoutY="165.0" prefHeight="280.0" prefWidth="857.0">
          <columns>
             <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
-            <TableColumn fx:id="colNom" prefWidth="130.0" text="Nom" />
-            <TableColumn fx:id="colPrenom" prefWidth="130.0" text="Prénom" />
-            <TableColumn fx:id="colEmail" prefWidth="200.0" text="Email" />
-            <TableColumn fx:id="colTelephone" prefWidth="120.0" text="Téléphone" />
-            <TableColumn fx:id="colAdresse" prefWidth="184.0" text="Adresse" />
+            <TableColumn fx:id="colNom" prefWidth="92.80001831054688" text="Nom" />
+            <TableColumn fx:id="colPrenom" prefWidth="148.7999725341797" text="Prénom" />
+            <TableColumn fx:id="colEmail" prefWidth="191.20001220703125" text="Email" />
+            <TableColumn fx:id="colTelephone" prefWidth="146.39996337890625" text="Téléphone" />
+            <TableColumn fx:id="colAdresse" prefWidth="131.20001220703125" text="Adresse" />
+            <TableColumn fx:id="colFidelite" maxWidth="2000.0" prefWidth="97.60009765625" text="Points fidelité" />
          </columns>
       </TableView>
 
@@ -90,14 +91,13 @@
                </children>
             </VBox>
          </children>
-      </HBox>
-
-      <!-- Barre de statut - AJOUTÉ -->
-      <HBox layoutX="20.0" layoutY="555.0" spacing="20.0" style="-fx-background-color: #f5f5f5; -fx-padding: 5px;">
-         <children>
-            <Label fx:id="lblStatut" style="-fx-font-weight: bold;" text="Prêt" />
-            <Label fx:id="lblDerniereMaj" text="Dernière mise à jour: --:--:--" />
-         </children>
+         <!-- Barre de statut - AJOUTÉ -->
+         <HBox layoutX="20.0" layoutY="555.0" spacing="20.0" style="-fx-background-color: #f5f5f5; -fx-padding: 5px;">
+            <children>
+               <Label fx:id="lblStatut" style="-fx-font-weight: bold;" text="Prêt" />
+               <Label fx:id="lblDerniereMaj" text="Dernière mise à jour: --:--:--" />
+            </children>
+         </HBox>
       </HBox>
 
    </children>

@@ -1,15 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="648.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionEmployeController">
+    <children>
+        <!-- Titre -->
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="298.0" layoutY="25.0" prefHeight="35.0" prefWidth="293.0" text="Gestion Employés" textAlignment="CENTER" textFill="#9ca2b0">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
 
-<AnchorPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionEmployeController">
-   <children>
-      <Pane>
+        <!-- Formulaire d'ajout/modification -->
+        <VBox layoutX="20.0" layoutY="80.0" prefHeight="200.0" prefWidth="300.0" spacing="10.0" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-background-radius: 10;">
+            <children>
+                <Label text="Informations Employé" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
 
-</Pane>
-      <Label layoutX="57.0" layoutY="58.0" text="Gestion Employe" />
-   </children>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="Nom:" />
+                        <TextField fx:id="nomField" prefWidth="180.0" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="Prénom:" />
+                        <TextField fx:id="prenomField" prefWidth="180.0" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="Téléphone:" />
+                        <TextField fx:id="telephoneField" prefWidth="180.0" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="Rôle:" />
+                        <ComboBox fx:id="roleComboBox" disable="true" prefWidth="180.0" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="Login:" />
+                        <TextField fx:id="loginField" prefWidth="180.0" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="Mot de passe:" />
+                        <PasswordField fx:id="motDePasseField" prefWidth="180.0" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label minWidth="80.0" text="N° Employé:" />
+                        <TextField fx:id="numeroEmployeField" prefWidth="180.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Boutons d'actions -->
+        <HBox layoutX="17.0" layoutY="396.0" spacing="10.0">
+            <children>
+                <Button fx:id="ajouterBtn" onAction="#ajouterEmploye" prefWidth="80.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Ajouter" />
+                <Button fx:id="modifierBtn" onAction="#modifierEmploye" prefWidth="80.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Modifier" />
+                <Button fx:id="supprimerBtn" onAction="#supprimerEmploye" prefWidth="80.0" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Supprimer" />
+                <Button fx:id="viderBtn" onAction="#viderFormulaire" prefWidth="80.0" style="-fx-background-color: #FF9800; -fx-text-fill: white;" text="Vider" />
+            </children>
+        </HBox>
+
+        <!-- Barre de recherche -->
+        <HBox layoutX="390.0" layoutY="86.0" spacing="10.0">
+            <children>
+                <Label text="Rechercher:" />
+                <TextField fx:id="rechercheField" onKeyReleased="#rechercherEmploye" prefWidth="200.0" promptText="Nom, prénom ou numéro employé" />
+                <Button fx:id="actualiserBtn" onAction="#actualiserTableau" style="-fx-background-color: #607D8B; -fx-text-fill: white;" text="Actualiser" />
+            </children>
+        </HBox>
+
+        <!-- Tableau des employés -->
+        <TableView fx:id="tableViewEmployes" layoutX="390.0" layoutY="120.0" prefHeight="400.0" prefWidth="520.0">
+            <columns>
+                <TableColumn fx:id="colId" minWidth="50.0" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colNumeroEmploye" minWidth="100.0" prefWidth="100.0" text="N° Employé" />
+                <TableColumn fx:id="colNom" minWidth="100.0" prefWidth="100.0" text="Nom" />
+                <TableColumn fx:id="colPrenom" minWidth="100.0" prefWidth="100.0" text="Prénom" />
+                <TableColumn fx:id="colTelephone" minWidth="100.0" prefWidth="100.0" text="Téléphone" />
+                <TableColumn fx:id="colRole" minWidth="80.0" prefWidth="80.0" text="Rôle" />
+                <TableColumn fx:id="colLogin" minWidth="100.0" prefWidth="100.0" text="Login" />
+            </columns>
+        </TableView>
+
+        <!-- Messages d'information -->
+        <Label fx:id="messageLabel" layoutX="20.0" layoutY="550.0" prefHeight="30.0" prefWidth="850.0" textFill="#d32f2f" />
+    </children>
 </AnchorPane>

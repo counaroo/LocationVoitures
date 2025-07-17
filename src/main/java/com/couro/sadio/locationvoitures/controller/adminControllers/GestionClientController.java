@@ -59,6 +59,8 @@ public class GestionClientController implements Initializable {
     private TableColumn<Client, Integer> colTelephone;
     @FXML
     private TableColumn<Client, String> colAdresse;
+    @FXML
+    private TableColumn<Client,Integer>  colFidelite;
 
     // Labels de statistiques
     @FXML
@@ -108,6 +110,7 @@ public class GestionClientController implements Initializable {
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colTelephone.setCellValueFactory(new PropertyValueFactory<>("telephone"));
         colAdresse.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+        colFidelite.setCellValueFactory(new PropertyValueFactory<>("pointsFidelite"));
 
         // Configuration de l'alignement des colonnes
         colId.setStyle("-fx-alignment: CENTER;");
