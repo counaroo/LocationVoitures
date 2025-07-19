@@ -50,7 +50,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showMesRservations" prefHeight="52.0" prefWidth="133.0" style="-fx-background-color: #F4F8FB; -fx-border-radius: 10;" text="Mes reservations" textFill="#a6a6a6">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showMesReservations" prefHeight="52.0" prefWidth="133.0" style="-fx-background-color: #F4F8FB; -fx-border-radius: 10;" text="Mes reservations" textFill="#a6a6a6">
                      <font>
                         <Font size="15.0" />
                      </font>

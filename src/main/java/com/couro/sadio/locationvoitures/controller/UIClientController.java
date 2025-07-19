@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,66 +32,50 @@ public class UIClientController implements Initializable,UILoginController.Contr
 
     private Utilisateur currentUser;
 
+
     @Override
     public void setUserData(Utilisateur user) {
-        this.currentUser=user;
-        updateUserInterface();
-    }
-
-
-    private void updateUserInterface() {
-        if(currentUser != null){
-            if(userName != null){
-                userName.setText(currentUser.getPrenom()+"-"+currentUser.getNom());
-            }
-
-            if(role != null){
-                role.setText(currentUser.getRole().toString());
-            }
-
+        this.currentUser = user;
+        if (user != null) {
+            userName.setText(user.getNom() + " " + user.getPrenom()); // Adaptez selon vos getters
+            role.setText(user.getRole().toString());
         }
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try{
-            Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml"));
-            contentArea.getChildren().removeAll();
-            contentArea.getChildren().setAll(fxml);
-        } catch (IOException e) {
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null, e);
-        }
+        loadView("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml", null);
     }
 
-    public void showMesRservations(ActionEvent event){
-        try{
-            Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/ClientWindows/MesReservation.fxml"));
-            contentArea.getChildren().removeAll();
-            contentArea.getChildren().setAll(fxml);
-        } catch (IOException e) {
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null, e);
-        }
+
+
+    public void showMesReservations(ActionEvent event) {
+        loadView("/com/couro/sadio/view/ClientWindows/MesReservation.fxml", currentUser);
     }
 
-    public void showProfil(ActionEvent event){
-        try{
-            Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/ClientWindows/ProfileClient.fxml"));
-            contentArea.getChildren().removeAll();
-            contentArea.getChildren().setAll(fxml);
-        } catch (IOException e) {
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null, e);
-        }
+    public void showProfil(ActionEvent event) {
+        loadView("/com/couro/sadio/view/ClientWindows/ProfileClient.fxml", currentUser);
     }
 
     public void showAccueil(ActionEvent event) {
-        try{
-            Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml"));
+        loadView("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml", currentUser);
+    }
+
+    private void loadView(String fxmlPath, Utilisateur user) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent fxml = loader.load();
+
+            // Récupérer le contrôleur et lui passer les données utilisateur si nécessaire
+            Object controller = loader.getController();
+            if (controller instanceof UILoginController.ControlledScreen && user != null) {
+                ((UILoginController.ControlledScreen) controller).setUserData(user);
+            }
+
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
         } catch (IOException e) {
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null, e);
+            Logger.getLogger(UIClientController.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
