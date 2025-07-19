@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 @Entity(name = "reservations")
@@ -13,15 +14,15 @@ public class Reservation {
     @Column(name = "id")
     private int id ;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "vehicule_id")
     private Vehicule vehicule;
 
-    private Date date;
+    private LocalDateTime date;
 
     private boolean statut;
 
@@ -29,7 +30,7 @@ public class Reservation {
 
     private LocalDateTime dateFin;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "chauffeur_id")
     private Chauffeur chauffeur;
 
@@ -41,10 +42,12 @@ public class Reservation {
 
     private double montantTotale;
 
+    private int nbrJour;
+
     public Reservation() {
     }
 
-    public Reservation(Client client, Vehicule vehicule, Date date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur, boolean avecChauffeur, double montantVehicule, double montantChauffeur, double montantTotale) {
+    public Reservation(Client client, Vehicule vehicule, LocalDateTime date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur, double montantVehicule, double montantChauffeur) {
         this.client = client;
         this.vehicule = vehicule;
         this.date = date;
@@ -52,13 +55,14 @@ public class Reservation {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.chauffeur = chauffeur;
-        this.avecChauffeur = avecChauffeur;
+        this.avecChauffeur = true;
         this.montantVehicule = montantVehicule;
         this.montantChauffeur = montantChauffeur;
-        this.montantTotale = montantTotale;
+        this.nbrJour = (int) ChronoUnit.DAYS.between(dateDebut, dateFin);
+        this.montantTotale = montantChauffeur + montantVehicule*nbrJour ;
     }
 
-    public Reservation(int id, Client client, Vehicule vehicule, Date date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur, boolean avecChauffeur, double montantVehicule, double montantChauffeur, double montantTotale) {
+    public Reservation(int id, Client client, Vehicule vehicule, LocalDateTime date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur,double montantVehicule, double montantChauffeur) {
         this.id = id;
         this.client = client;
         this.vehicule = vehicule;
@@ -67,10 +71,24 @@ public class Reservation {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.chauffeur = chauffeur;
-        this.avecChauffeur = avecChauffeur;
+        setAvecChauffeur(true);
         this.montantVehicule = montantVehicule;
         this.montantChauffeur = montantChauffeur;
-        this.montantTotale = montantTotale;
+        setNbrJour((int) ChronoUnit.DAYS.between(dateDebut, dateFin));
+        setMontantTotale(montantChauffeur + montantVehicule*nbrJour);
+    }
+
+    public Reservation(Client client, Vehicule vehicule, LocalDateTime date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, double montantVehicule) {
+        this.client = client;
+        this.vehicule = vehicule;
+        this.date = date;
+        this.statut = statut;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.montantVehicule = montantVehicule;
+        setNbrJour((int) ChronoUnit.DAYS.between(dateDebut, dateFin));
+        setAvecChauffeur(false);
+        setMontantTotale(montantVehicule*nbrJour);
     }
 
     //Getter et setter
@@ -99,11 +117,11 @@ public class Reservation {
         this.vehicule = vehicule;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
@@ -161,6 +179,14 @@ public class Reservation {
 
     public void setMontantChauffeur(double montantChauffeur) {
         this.montantChauffeur = montantChauffeur;
+    }
+
+    public int getNbrJour() {
+        return nbrJour;
+    }
+
+    public void setNbrJour(int nbrJour) {
+        this.nbrJour = nbrJour;
     }
 
     public double getMontantTotale() {

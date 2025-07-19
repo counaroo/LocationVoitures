@@ -1,13 +1,13 @@
 package com.couro.sadio.locationvoitures.Runtime;
 
 import com.couro.sadio.locationvoitures.entities.*;
-import com.couro.sadio.locationvoitures.modele.ClientModele;
-import com.couro.sadio.locationvoitures.modele.EmployeModele;
-import com.couro.sadio.locationvoitures.modele.VehiculeModele;
+import com.couro.sadio.locationvoitures.modele.*;
+
+import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testerEmploye();
+        testerRservation();
 
     }
 
@@ -90,5 +90,26 @@ public class MainTest1 {
         vehiculeModele.create(vehicule4);
 
         vehiculeModele.lister();
+    }
+
+    //Rerervation test
+    public  static  void testerRservation(){
+        ClientModele clientModele = new ClientModele();
+        Client client = clientModele.read(2);
+        VehiculeModele vehiculeModele = new VehiculeModele();
+        Vehicule vehicule = vehiculeModele.read(3);
+        ChauffeurModele chauffeurModele = new ChauffeurModele();
+        Chauffeur chauffeur = chauffeurModele.read(1);
+        Reservation reservation = new Reservation(client,vehicule,LocalDateTime.now(),true,LocalDateTime.of(2025,8,1,9,0),LocalDateTime.of(2025,10,1,9,0),chauffeur,vehicule.getTarif(),chauffeur.getTarif());
+
+        ReservationModele reservationModele =new ReservationModele();
+        reservationModele.create(reservation);
+    }
+
+    //Test Chauffeur
+    public static  void testerCreationChauffeur(){
+        ChauffeurModele chauffeurModele = new ChauffeurModele();
+        Chauffeur chauffeur = new Chauffeur("Tsunoda","Yuki",760120012,true);
+        chauffeurModele.create(chauffeur);
     }
 }

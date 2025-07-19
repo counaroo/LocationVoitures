@@ -3,10 +3,14 @@ package com.couro.sadio.locationvoitures.modele;
 import com.couro.sadio.locationvoitures.dao.IDao;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateEmployeeDaoImpl;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateReservationDaoImpl;
+import com.couro.sadio.locationvoitures.entities.Client;
 import com.couro.sadio.locationvoitures.entities.Reservation;
 import com.couro.sadio.locationvoitures.factory.ConcreteFactory;
 import com.couro.sadio.locationvoitures.factory.EmployeFactory;
 import com.couro.sadio.locationvoitures.factory.ReservationFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReservationModele extends ObjectModele<Reservation>{
     @Override
@@ -28,5 +32,12 @@ public class ReservationModele extends ObjectModele<Reservation>{
     @Override
     protected String getEntityDetails(Reservation entity) {
         return "";
+    }
+
+    public List<Reservation> findByClient(Client clientConnecte) {
+        HibernateReservationDaoImpl reservationDao = new HibernateReservationDaoImpl(Reservation.class);
+        List<Reservation> reservationList = new ArrayList<>();
+        reservationList = reservationDao.findByClient(clientConnecte);
+        return reservationList;
     }
 }

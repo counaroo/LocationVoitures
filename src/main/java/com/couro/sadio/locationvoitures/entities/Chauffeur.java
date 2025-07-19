@@ -17,6 +17,8 @@ public class Chauffeur {
 
     private boolean dispo;
 
+    private double tarif;
+
 
     //Constructeurs
     public Chauffeur() {
@@ -27,6 +29,14 @@ public class Chauffeur {
         this.prenom = prenom;
         this.telephone = telephone;
         this.dispo = dispo;
+    }
+
+    public Chauffeur(String nom, String prenom, int telephone, boolean dispo, double tarif) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+        this.dispo = dispo;
+        this.tarif = tarif;
     }
 
     public Chauffeur(int id, String nom, String prenom, int telephone, boolean dispo) {
@@ -77,5 +87,13 @@ public class Chauffeur {
 
     public void setDispo(boolean dispo) {
         this.dispo = dispo;
+    }
+
+    public double getTarif() {
+        return tarif;
+    }
+
+    public void setTarif(double tarif) {
+        this.tarif = tarif;
     }
 }

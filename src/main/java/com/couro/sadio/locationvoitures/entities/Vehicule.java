@@ -13,7 +13,7 @@ public class Vehicule {
 
     private  String modele;
 
-    private int tarif;
+    private double tarif;
 
     private Boolean dispo;
 
@@ -63,11 +63,11 @@ public class Vehicule {
         this.modele = modele;
     }
 
-    public int getTarif() {
+    public double getTarif() {
         return tarif;
     }
 
-    public void setTarif(int tarif) {
+    public void setTarif(double tarif) {
         this.tarif = tarif;
     }
 

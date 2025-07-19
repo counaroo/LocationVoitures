@@ -1,4 +1,4 @@
 package com.couro.sadio.locationvoitures.controller.clientController;
 
-public class MesReservation {
+public class MesReservationController {
 }

@@ -39,6 +39,7 @@ public class UIClientController implements Initializable,UILoginController.Contr
         updateUserInterface();
     }
 
+
     private void updateUserInterface() {
         if(currentUser != null){
             if(userName != null){
