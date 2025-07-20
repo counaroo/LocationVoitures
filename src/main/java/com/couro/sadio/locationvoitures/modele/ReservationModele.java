@@ -5,6 +5,7 @@ import com.couro.sadio.locationvoitures.dao.impl.HibernateEmployeeDaoImpl;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateReservationDaoImpl;
 import com.couro.sadio.locationvoitures.entities.Client;
 import com.couro.sadio.locationvoitures.entities.Reservation;
+import com.couro.sadio.locationvoitures.exception.DAOException;
 import com.couro.sadio.locationvoitures.factory.ConcreteFactory;
 import com.couro.sadio.locationvoitures.factory.EmployeFactory;
 import com.couro.sadio.locationvoitures.factory.ReservationFactory;
@@ -34,10 +35,13 @@ public class ReservationModele extends ObjectModele<Reservation>{
         return "";
     }
 
-    public List<Reservation> findByClient(Client clientConnecte) {
+    public List<Reservation> findByClient(Client clientConnecte) throws DAOException {
         HibernateReservationDaoImpl reservationDao = new HibernateReservationDaoImpl(Reservation.class);
-        List<Reservation> reservationList = new ArrayList<>();
-        reservationList = reservationDao.findByClient(clientConnecte);
-        return reservationList;
+        try {
+            return reservationDao.findByClient(clientConnecte);
+        } catch (DAOException e) {
+            throw new DAOException("Erreur lors de la recherche des réservations pour le client " +
+                    clientConnecte.getId() + ": " + e.getMessage());
+        }
     }
 }

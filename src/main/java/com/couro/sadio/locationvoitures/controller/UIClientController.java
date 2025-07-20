@@ -1,5 +1,6 @@
 package com.couro.sadio.locationvoitures.controller;
 
+import com.couro.sadio.locationvoitures.interfaces.ControlledScreen; // Nouvelle interface
 import com.couro.sadio.locationvoitures.entities.Utilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,7 +20,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class UIClientController implements Initializable,UILoginController.ControlledScreen{
+public class UIClientController implements Initializable, UILoginController.ControlledScreen {
 
     @FXML
     private StackPane contentArea;
@@ -32,12 +33,11 @@ public class UIClientController implements Initializable,UILoginController.Contr
 
     private Utilisateur currentUser;
 
-
     @Override
     public void setUserData(Utilisateur user) {
         this.currentUser = user;
         if (user != null) {
-            userName.setText(user.getNom() + " " + user.getPrenom()); // Adaptez selon vos getters
+            userName.setText(user.getNom() + " " + user.getPrenom());
             role.setText(user.getRole().toString());
         }
     }
@@ -46,8 +46,6 @@ public class UIClientController implements Initializable,UILoginController.Contr
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadView("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml", null);
     }
-
-
 
     public void showMesReservations(ActionEvent event) {
         loadView("/com/couro/sadio/view/ClientWindows/MesReservation.fxml", currentUser);
@@ -68,7 +66,11 @@ public class UIClientController implements Initializable,UILoginController.Contr
 
             // Récupérer le contrôleur et lui passer les données utilisateur si nécessaire
             Object controller = loader.getController();
-            if (controller instanceof UILoginController.ControlledScreen && user != null) {
+
+            // Vérifier les deux interfaces possibles
+            if (controller instanceof ControlledScreen && user != null) {
+                ((ControlledScreen) controller).setUserData(user);
+            } else if (controller instanceof UILoginController.ControlledScreen && user != null) {
                 ((UILoginController.ControlledScreen) controller).setUserData(user);
             }
 

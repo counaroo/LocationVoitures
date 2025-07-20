@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testerRservation();
+        testetModifierReservation();
 
     }
 
@@ -100,10 +100,23 @@ public class MainTest1 {
         Vehicule vehicule = vehiculeModele.read(3);
         ChauffeurModele chauffeurModele = new ChauffeurModele();
         Chauffeur chauffeur = chauffeurModele.read(1);
-        Reservation reservation = new Reservation(client,vehicule,LocalDateTime.now(),true,LocalDateTime.of(2025,8,1,9,0),LocalDateTime.of(2025,10,1,9,0),chauffeur,vehicule.getTarif(),chauffeur.getTarif());
+        Reservation reservation = new Reservation(client,vehicule,LocalDateTime.now(),StatutReservation.EN_ATTENTE,LocalDateTime.of(2025,8,1,9,0),LocalDateTime.of(2025,10,1,9,0),chauffeur,vehicule.getTarif(),chauffeur.getTarif());
 
         ReservationModele reservationModele =new ReservationModele();
         reservationModele.create(reservation);
+    }
+
+    public static  void testetModifierReservation(){
+        ClientModele clientModele = new ClientModele();
+        Client client = clientModele.read(2);
+        VehiculeModele vehiculeModele = new VehiculeModele();
+        Vehicule vehicule = vehiculeModele.read(3);
+        ChauffeurModele chauffeurModele = new ChauffeurModele();
+        Chauffeur chauffeur = chauffeurModele.read(1);
+        Reservation reservation = new Reservation(1,client,vehicule,LocalDateTime.now(),StatutReservation.EN_ATTENTE,LocalDateTime.of(2025,8,1,9,0),LocalDateTime.of(2025,10,1,9,0),chauffeur,vehicule.getTarif(),chauffeur.getTarif());
+
+        ReservationModele reservationModele =new ReservationModele();
+        reservationModele.update(reservation);
     }
 
     //Test Chauffeur

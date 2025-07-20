@@ -15,16 +15,28 @@ public class HibernateReservationDaoImpl extends HibernateObjectDaoImpl<Reservat
     }
 
     public List<Reservation> findByClient(Client client) throws DAOException {
+        if (client == null) {
+            throw new DAOException("Client null");
+        }
+
         Session session = HibernateConnection.getInstance().getSession();
         try {
-            String hql = "FROM Reservation r WHERE r.client = :client ORDER BY r.dateDebut DESC";
+            String hql = "FROM reservations r WHERE r.client.id = :clientId ORDER BY r.dateDebut DESC";
             Query<Reservation> query = session.createQuery(hql, Reservation.class);
-            query.setParameter("client", client);
-            return query.getResultList();
+            query.setParameter("clientId", client.getId());
+
+            List<Reservation> results = query.getResultList();
+            System.out.println("Nombre de réservations trouvées pour le client " + client.getId() + ": " + results.size());
+            return results;
+
         } catch (Exception e) {
-            throw new DAOException("Erreur lors de la récupération des réservations par client");
+            System.err.println("Erreur dans findByClient pour client ID: " + client.getId());
+            e.printStackTrace();
+            throw new DAOException("Erreur lors de la récupération des réservations par client: " + e.getMessage());
         } finally {
-            session.close();
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
         }
     }
 }

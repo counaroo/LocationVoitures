@@ -1,16 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="612.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.clientController.MesReservationController">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.clientController.MesReservationController">
    <children>
-      <Label contentDisplay="CENTER" layoutX="341.0" layoutY="14.0" text="Mes reservations" textAlignment="CENTER" textFill="#9ca2b0">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="Nom" layoutX="409.0" layoutY="222.0" text="Nom" />
+      <!-- Header Section -->
+      <VBox layoutX="20.0" layoutY="20.0" prefWidth="960.0" spacing="10.0">
+         <children>
+            <!-- Titre principal -->
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Mes Réservations" textAlignment="CENTER" textFill="#2c3e50">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+
+            <!-- Informations client -->
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label text="Client :" textFill="#34495e">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblClientNom" text="[Nom du client]" textFill="#2c3e50">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+
+            <!-- Statistiques rapides -->
+            <HBox alignment="CENTER_LEFT" spacing="30.0">
+               <children>
+                  <Label fx:id="lblTotalReservations" text="Total réservations: 0" textFill="#7f8c8d">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblReservationsActives" text="Actives: 0" textFill="#27ae60">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblReservationsAnnulees" text="Annulées: 0" textFill="#e74c3c">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Table des réservations -->
+      <TableView fx:id="tableReservations" layoutX="20.0" layoutY="140.0" prefHeight="400.0" prefWidth="948.0" style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 5;">
+         <columns>
+            <!-- ID Réservation -->
+            <TableColumn fx:id="colId" prefWidth="50.400020599365234" text="ID" />
+
+            <!-- Véhicule -->
+            <TableColumn fx:id="colVehicule" prefWidth="118.39999389648438" text="Véhicule" />
+
+                  <!-- Date de réservation -->
+            <TableColumn fx:id="colDateReservation" prefWidth="132.0000762939453" text="Date Réservation" />
+
+            <!-- Période de location -->
+            <TableColumn fx:id="colDateDebut" prefWidth="122.40008544921875" text="Début" />
+            <TableColumn fx:id="colDateFin" prefWidth="106.39996337890625" text="Fin" />
+            <TableColumn fx:id="colNbrJours" prefWidth="73.5999755859375" text="Jours" />
+
+            <!-- Chauffeur -->
+            <TableColumn fx:id="colChauffeur" prefWidth="108.00006103515625" text="Chauffeur" />
+
+            <!-- Montants -->
+            <TableColumn fx:id="colMontantTotal" prefWidth="116.0" text="Montant " />
+
+            <!-- Statut -->
+            <TableColumn fx:id="colStatut" prefWidth="115.20001220703125" text="Statut" />
+         </columns>
+      </TableView>
+
+      <!-- Section des actions -->
+      <VBox layoutX="20.0" layoutY="560.0" prefWidth="960.0" spacing="15.0">
+         <children>
+            <!-- Détails de la réservation sélectionnée -->
+            <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-border-radius: 5;">
+               <children>
+                  <Label text="Réservation sélectionnée :" textFill="#2c3e50">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDetailsReservation" text="Aucune réservation sélectionnée" textFill="#7f8c8d">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+
+            <!-- Boutons d'actions -->
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button fx:id="btnRafraichir" onAction="#rafraichirListe" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Rafraîchir">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+
+                  <Button fx:id="btnVoirDetails" disable="true" onAction="#voirDetails" prefWidth="120.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Voir Détails">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+
+                  <Button fx:id="btnAnnuler" disable="true" onAction="#annulerReservation" prefWidth="120.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Annuler">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

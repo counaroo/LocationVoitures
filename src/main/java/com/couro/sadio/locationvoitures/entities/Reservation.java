@@ -1,11 +1,9 @@
 package com.couro.sadio.locationvoitures.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 @Entity(name = "reservations")
 public class Reservation {
@@ -24,7 +22,7 @@ public class Reservation {
 
     private LocalDateTime date;
 
-    private boolean statut;
+    private StatutReservation statut;
 
     private LocalDateTime dateDebut;
 
@@ -47,7 +45,7 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Client client, Vehicule vehicule, LocalDateTime date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur, double montantVehicule, double montantChauffeur) {
+    public Reservation(Client client, Vehicule vehicule, LocalDateTime date, StatutReservation statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur, double montantVehicule, double montantChauffeur) {
         this.client = client;
         this.vehicule = vehicule;
         this.date = date;
@@ -62,7 +60,7 @@ public class Reservation {
         this.montantTotale = montantChauffeur + montantVehicule*nbrJour ;
     }
 
-    public Reservation(int id, Client client, Vehicule vehicule, LocalDateTime date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur,double montantVehicule, double montantChauffeur) {
+    public Reservation(int id, Client client, Vehicule vehicule, LocalDateTime date, StatutReservation statut, LocalDateTime dateDebut, LocalDateTime dateFin, Chauffeur chauffeur,double montantVehicule, double montantChauffeur) {
         this.id = id;
         this.client = client;
         this.vehicule = vehicule;
@@ -78,7 +76,7 @@ public class Reservation {
         setMontantTotale(montantChauffeur + montantVehicule*nbrJour);
     }
 
-    public Reservation(Client client, Vehicule vehicule, LocalDateTime date, boolean statut, LocalDateTime dateDebut, LocalDateTime dateFin, double montantVehicule) {
+    public Reservation(Client client, Vehicule vehicule, LocalDateTime date, StatutReservation statut, LocalDateTime dateDebut, LocalDateTime dateFin, double montantVehicule) {
         this.client = client;
         this.vehicule = vehicule;
         this.date = date;
@@ -125,11 +123,11 @@ public class Reservation {
         this.date = date;
     }
 
-    public boolean isStatut() {
+    public StatutReservation isStatut() {
         return statut;
     }
 
-    public void setStatut(boolean statut) {
+    public void setStatut(StatutReservation statut) {
         this.statut = statut;
     }
 
