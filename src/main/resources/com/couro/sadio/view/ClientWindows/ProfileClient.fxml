@@ -1,11 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.clientController.ProfileClientController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.clientController.ProfileClientController">
    <children>
-      <Label layoutX="286.0" layoutY="63.0" text="Profil" />
+      <!-- Header -->
+      <VBox layoutX="50.0" layoutY="30.0" prefHeight="640.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);">
+         <padding>
+            <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+         </padding>
+         <children>
+            <!-- Titre principal -->
+            <Label text="Mon Profil" textFill="#9ca2b0">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+
+            <Separator prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, black, #764ba2);" />
+
+            <!-- ScrollPane pour le contenu -->
+            <ScrollPane fitToWidth="true" prefHeight="520.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+               <content>
+                  <VBox spacing="25.0">
+                     <children>
+                        <!-- Section Informations Personnelles -->
+                        <VBox spacing="15.0">
+                           <children>
+                              <Label style="-fx-text-fill: #4a5568;" text="Informations Personnelles">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+
+                              <!-- Ligne Nom et Prénom -->
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Nom *">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtNom" prefHeight="40.0" promptText="Entrez votre nom" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Prénom *">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtPrenom" prefHeight="40.0" promptText="Entrez votre prénom" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+
+                              <!-- Ligne Email et Téléphone -->
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Email *">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtEmail" prefHeight="40.0" promptText="exemple@email.com" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Téléphone *">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtTelephone" prefHeight="40.0" promptText="Ex: 771234567" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+
+                              <!-- Adresse -->
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Adresse">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtAdresse" prefHeight="40.0" promptText="Entrez votre adresse complète" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+
+                        <Separator prefWidth="200.0" style="-fx-background-color: #e2e8f0;" />
+
+                        <!-- Section Informations de Connexion -->
+                        <VBox spacing="15.0">
+                           <children>
+                              <Label style="-fx-text-fill: #4a5568;" text="Informations de Connexion">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+
+                              <!-- Login -->
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Login *">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtLogin" prefHeight="40.0" promptText="Nom d'utilisateur" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                 </children>
+                              </VBox>
+
+                              <!-- Mots de passe -->
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Nouveau mot de passe">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <PasswordField fx:id="txtNouveauMotDePasse" prefHeight="40.0" promptText="Nouveau mot de passe" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Confirmer mot de passe">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <PasswordField fx:id="txtConfirmerMotDePasse" prefHeight="40.0" promptText="Confirmer le mot de passe" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+
+                              <Label fx:id="lblMessageMotDePasse" style="-fx-text-fill: #f56565;" text="">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+
+                        <Separator prefWidth="200.0" style="-fx-background-color: #e2e8f0;" />
+
+                        <!-- Section Points de Fidélité -->
+                        <VBox spacing="15.0">
+                           <children>
+                              <Label style="-fx-text-fill: #4a5568;" text="Programme de Fidélité">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+
+                              <HBox spacing="15.0" style="-fx-background: linear-gradient(to right, black, #764ba2); -fx-background-radius: 12; -fx-padding: 25;">
+                                 <children>
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: white; -fx-font-weight: bold;" text="Vos Points de Fidélité">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPointsFidelite" style="-fx-text-fill: #ffd700;" text="0 points">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_RIGHT" spacing="5.0">
+                                       <children>
+                                          <Label style="-fx-text-fill: white; -fx-font-weight: bold;" text="Statut">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblStatutFidelite" style="-fx-text-fill: #ffd700;" text="Bronze">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+
+                              <Label style="-fx-text-fill: black;" text="• Bronze: 0-99 points">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-text-fill: black;" text="• Argent: 100-299 points (-15% de réduction)">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-text-fill: black;" text="• Or: 300+ points (-25% de réduction)">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+
+                        <Separator prefWidth="200.0" style="-fx-background-color: #ecf0f1;" />
+
+                        <!-- Boutons d'action -->
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <Button fx:id="btnSauvegarder" mnemonicParsing="false" onAction="#handleSauvegarder" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-font-size: 14px; -fx-font-weight: bold;" text="Sauvegarder">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnAnnuler" mnemonicParsing="false" onAction="#handleAnnuler" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 5; -fx-font-size: 14px; -fx-font-weight: bold;" text="Annuler">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnActualiser" mnemonicParsing="false" onAction="#handleActualiser" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 5; -fx-font-size: 14px; -fx-font-weight: bold;" text="Actualiser">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+
+                        <!-- Message de statut -->
+                        <Label fx:id="lblMessage" text="" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

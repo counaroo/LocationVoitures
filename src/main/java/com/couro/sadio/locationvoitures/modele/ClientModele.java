@@ -3,6 +3,7 @@ package com.couro.sadio.locationvoitures.modele;
 import com.couro.sadio.locationvoitures.dao.IDao;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateClientDaoImpl;
 import com.couro.sadio.locationvoitures.entities.Client;
+import com.couro.sadio.locationvoitures.entities.Utilisateur;
 import com.couro.sadio.locationvoitures.exception.DAOException;
 import com.couro.sadio.locationvoitures.factory.ClientFactory;
 import com.couro.sadio.locationvoitures.factory.ConcreteFactory;
@@ -121,6 +122,18 @@ public class ClientModele extends ObjectModele<Client>{
                     .collect(Collectors.toList());
         } catch (DAOException e) {
             System.err.println("Erreur lors de la récupération des clients inactifs : " + e.getMessage());
+            return null;
+        }
+    }
+
+    public Client getClientConnecteByUser(Utilisateur user){
+        try {
+            ClientModele clientModele = new ClientModele();
+            Client client ;
+            client = clientModele.read(user.getId());
+            return client;
+        } catch (DAOException e) {
+            System.err.println("Erreur lors de la récupération du client connecté: " + e.getMessage());
             return null;
         }
     }
