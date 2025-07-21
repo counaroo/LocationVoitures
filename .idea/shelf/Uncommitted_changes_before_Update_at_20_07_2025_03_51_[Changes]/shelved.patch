@@ -1,0 +1,304 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f8aa9755-dc42-473b-bd33-0d51421d825b\" name=\"Changes\" comment=\"hello\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Exception\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2z4CzqgPU9BwbhbK5McA5M8EwaN\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"Application.MainApplication.executor\": \"Run\",\r\n    \"Application.MainTest1.executor\": \"Run\",\r\n    \"Application.MainTest2.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH\": \"298\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/LocationVoitures/src/main/resources\",\r\n    \"settings.editor.selected.configurable\": \"preferences.JavaFX\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\LocationVoitures\\src\\main\\resources\" />\r\n      <recent name=\"C:\\LocationVoitures\\src\\main\\resources\\com\\couro\\sadio\\locationvoitures\" />\r\n      <recent name=\"C:\\LocationVoitures\\src\\main\\java\\com\\couro\\sadio\\locationvoitures\\view\\images\" />\r\n      <recent name=\"C:\\LocationVoitures\\src\\main\\java\\com\\couro\\sadio\\locationvoitures\\view\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\LocationVoitures\\src\\main\\java\\com\\couro\\sadio\\locationvoitures\\view\" />\r\n      <recent name=\"C:\\LocationVoitures\\src\\main\\java\\com\\couro\\sadio\\locationvoitures\\view\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.MainApplication\">\r\n    <configuration name=\"MainApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.couro.sadio.locationvoitures.Runtime.MainApplication\" />\r\n      <module name=\"LocationVoitures\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.couro.sadio.locationvoitures.Runtime.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainTest1\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.couro.sadio.locationvoitures.Runtime.MainTest1\" />\r\n      <module name=\"LocationVoitures\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.couro.sadio.locationvoitures.Runtime.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainTest2\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.couro.sadio.locationvoitures.Runtime.MainTest2\" />\r\n      <module name=\"LocationVoitures\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.couro.sadio.locationvoitures.Runtime.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MainApplication\" />\r\n        <item itemvalue=\"Application.MainTest1\" />\r\n        <item itemvalue=\"Application.MainTest2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f8aa9755-dc42-473b-bd33-0d51421d825b\" name=\"Changes\" comment=\"\" />\r\n      <created>1750981226973</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1750981226973</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"hello\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1750982636619</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1750982636619</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"hello\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"hello\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7de16b7b5fc7080dbe7d3caeb110122e5f8e4f58)
++++ b/.idea/workspace.xml	(date 1752769221036)
+@@ -4,7 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello" />
++    <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/UIReservationController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/ui_reservation.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -13,11 +17,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Enum" />
+-        <option value="Exception" />
+-        <option value="Interface" />
++        <option value="FxmlFile" />
+         <option value="Class" />
+-        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -35,90 +36,20 @@
+   &quot;associatedIndex&quot;: 4
+ }</component>
+   <component name="ProjectId" id="2z4CzqgPU9BwbhbK5McA5M8EwaN" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.HelloApplication.executor": "Run",
+-    "Application.Main.executor": "Run",
+-    "Application.MainApplication.executor": "Run",
+-    "Application.MainTest1.executor": "Run",
+-    "Application.MainTest2.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "298",
+-    "git-widget-placeholder": "master",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/LocationVoitures/src/main/resources",
+-    "settings.editor.selected.configurable": "preferences.JavaFX"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+   }
+-}]]></component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="C:\LocationVoitures\src\main\resources" />
+-      <recent name="C:\LocationVoitures\src\main\resources\com\couro\sadio\locationvoitures" />
+-      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view\images" />
+-      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view" />
+-      <recent name="C:\LocationVoitures\src\main\java\com\couro\sadio\locationvoitures\view\images" />
+-    </key>
+-  </component>
+-  <component name="RunManager" selected="Application.MainApplication">
+-    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.MainApplication" />
+-      <module name="LocationVoitures" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.couro.sadio.locationvoitures.Runtime.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="MainTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.MainTest1" />
+-      <module name="LocationVoitures" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.couro.sadio.locationvoitures.Runtime.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="MainTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.MainTest2" />
+-      <module name="LocationVoitures" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.couro.sadio.locationvoitures.Runtime.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.MainApplication" />
+-        <item itemvalue="Application.MainTest1" />
+-        <item itemvalue="Application.MainTest2" />
+-      </list>
+-    </recent_temporary>
+-  </component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -138,17 +69,6 @@
+     </task>
+     <option name="localTasksCounter" value="2" />
+     <servers />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="hello" />
+Index: src/main/resources/com/couro/sadio/view/AdminWindows/ui_reservation.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/couro/sadio/view/AdminWindows/ui_reservation.fxml b/src/main/resources/com/couro/sadio/view/AdminWindows/ui_reservation.fxml
+new file mode 100644
+--- /dev/null	(date 1752785449660)
++++ b/src/main/resources/com/couro/sadio/view/AdminWindows/ui_reservation.fxml	(date 1752785449660)
+@@ -0,0 +1,54 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.text.*?>
++<?import javafx.geometry.Insets?>
++<?import javafx.geometry.Pos?>
++
++<AnchorPane xmlns:fx="http://javafx.com/fxml"
++            fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.UIReservationController"
++            prefWidth="800" prefHeight="500"
++            style="-fx-background-color: #f5f7fa;">
++    <children>
++        <StackPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
++                   AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
++            <AnchorPane prefWidth="450" prefHeight="400"
++                        style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 12, 0, 0, 4);">
++                <children>
++                    <VBox alignment="TOP_CENTER" spacing="25"
++                          AnchorPane.topAnchor="30" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30">
++                        <Label text="Réservez votre véhicule"
++                               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #263238;"/>
++                        <GridPane hgap="15" vgap="15">
++                            <columnConstraints>
++                                <ColumnConstraints percentWidth="35"/>
++                                <ColumnConstraints percentWidth="65"/>
++                            </columnConstraints>
++                            <Label text="Client :" GridPane.columnIndex="0" GridPane.rowIndex="0"
++                                   style="-fx-font-size: 14px; -fx-text-fill: #37474F;"/>
++                            <ComboBox fx:id="clientComboBox" promptText="Choisir un client"
++                                      prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
++                            <Label text="Véhicule :" GridPane.columnIndex="0" GridPane.rowIndex="1"
++                                   style="-fx-font-size: 14px; -fx-text-fill: #37474F;"/>
++                            <ComboBox fx:id="vehiculeComboBox" promptText="Choisir un véhicule"
++                                      prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
++                            <Label text="Date début :" GridPane.columnIndex="0" GridPane.rowIndex="2"
++                                   style="-fx-font-size: 14px; -fx-text-fill: #37474F;"/>
++                            <DatePicker fx:id="dateDebutPicker"
++                                        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
++                            <Label text="Date fin :" GridPane.columnIndex="0" GridPane.rowIndex="3"
++                                   style="-fx-font-size: 14px; -fx-text-fill: #37474F;"/>
++                            <DatePicker fx:id="dateFinPicker"
++                                        GridPane.columnIndex="1" GridPane.rowIndex="3"/>
++                        </GridPane>
++                        <Button text="Réserver maintenant"
++                                onAction="#handleReserverAction"
++                                prefWidth="240"
++                                style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 30;"/>
++                    </VBox>
++                </children>
++            </AnchorPane>
++        </StackPane>
++    </children>
++</AnchorPane>
+Index: src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/UIReservationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/UIReservationController.java b/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/UIReservationController.java
+new file mode 100644
+--- /dev/null	(date 1752796884982)
++++ b/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/UIReservationController.java	(date 1752796884982)
+@@ -0,0 +1,76 @@
++package com.couro.sadio.locationvoitures.controller.adminControllers;
++
++import com.couro.sadio.locationvoitures.dao.impl.HibernateClientDaoImpl;
++import com.couro.sadio.locationvoitures.dao.impl.HibernateReservationDaoImpl;
++import com.couro.sadio.locationvoitures.dao.impl.HibernateVehiculeDaoImpl;
++import com.couro.sadio.locationvoitures.entities.Client;
++import com.couro.sadio.locationvoitures.entities.Reservation;
++import com.couro.sadio.locationvoitures.entities.Vehicule;
++import javafx.fxml.FXML;
++import javafx.scene.control.Alert;
++import javafx.scene.control.ComboBox;
++import javafx.scene.control.DatePicker;
++
++import java.time.LocalDate;
++import java.util.List;
++
++public class UIReservationController {
++
++    @FXML
++    private ComboBox<Client> clientComboBox;
++
++    @FXML
++    private ComboBox<Vehicule> vehiculeComboBox;
++
++    @FXML
++    private DatePicker dateDebutPicker;
++
++    @FXML
++    private DatePicker dateFinPicker;
++
++    private final HibernateObjectDaoImpl<Client> clientDao = new HibernateObjectDaoImpl<>(Client.class);
++    private final HibernateObjectDaoImpl<Vehicule> vehiculeDao = new HibernateObjectDaoImpl<>(Vehicule.class);
++    private final HibernateObjectDaoImpl<Reservation> reservationDao = new HibernateObjectDaoImpl<>(Reservation.class);
++
++
++
++    @FXML
++    public void initialize() {
++        List<Client> clients = clientDao.findAll();
++        clientComboBox.getItems().addAll(clients);
++
++        List<Vehicule> vehicules = vehiculeDao.findAllDispos();
++        vehiculeComboBox.getItems().addAll(vehicules);
++    }
++
++    @FXML
++    public void handleReserverAction() {
++        Client client = clientComboBox.getValue();
++        Vehicule vehicule = vehiculeComboBox.getValue();
++        LocalDate debut = dateDebutPicker.getValue();
++        LocalDate fin = dateFinPicker.getValue();
++
++        if (client == null || vehicule == null || debut == null || fin == null) {
++            showAlert("Veuillez remplir tous les champs.");
++            return;
++        }
++
++        Reservation reservation = new Reservation();
++        reservation.setClient(client);
++        reservation.setVehicule(vehicule);
++        reservation.setDateDebut(java.sql.Date.valueOf(debut));
++        reservation.setDateFin(java.sql.Date.valueOf(fin));
++        reservation.setStatut("EN_ATTENTE");
++
++        reservationDao.save(reservation);
++        showAlert("Réservation enregistrée avec succès.");
++    }
++
++    private void showAlert(String message) {
++        Alert alert = new Alert(Alert.AlertType.INFORMATION);
++        alert.setTitle("Information");
++        alert.setHeaderText(null);
++        alert.setContentText(message);
++        alert.showAndWait();
++    }
++}

@@ -86,7 +86,6 @@ public abstract class HibernateObjectDaoImpl<T> implements IDao<T> {
         Session session = null;
         try {
             session = HibernateConnection.getInstance().getSession();
-            // Utiliser le nom de la classe d'entité, pas le nom de table
             String hql = "FROM " + typeObject.getName();
             return session.createQuery(hql, typeObject).getResultList();
         } catch (Exception e) {
@@ -120,5 +119,43 @@ public abstract class HibernateObjectDaoImpl<T> implements IDao<T> {
                 session.close();
             }
         }
+    }
+
+    // ✅ Ajout : méthode de suppression par instance (en plus de delete(int id))
+    public void delete(T entity) {
+        if (entity == null) return;
+
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateConnection.getInstance().getSession();
+            transaction = session.beginTransaction();
+            session.remove(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            if (session != null) session.close();
+        }
+    }
+
+    public void save(T entity) {
+        Session session = HibernateConnection.getInstance().getSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.saveOrUpdate(entity);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
+    public List<T> findAll() throws DAOException {
+        return list();
     }
 }

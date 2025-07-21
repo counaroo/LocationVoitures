@@ -1,0 +1,39 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+.main-pane {
+    -fx-background-color: #f4f6fa;
+}
+
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E90FF; /* bleu du projet */
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-min-width: 150px;
+}
+
+.form-combo, .form-date {
+    -fx-pref-height: 30px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #ddd;
+}
+
+.btn-primary {
+    -fx-background-color: #1E90FF;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #187bcd;
+}

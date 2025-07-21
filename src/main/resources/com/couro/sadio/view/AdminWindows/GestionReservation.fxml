@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionReservationController"
+            prefHeight="648.0" prefWidth="933.0">
+
+    <children>
+
+        <Label layoutX="310.0" layoutY="25.0" text="Gestion Réservations" textFill="#9ca2b0">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <VBox layoutX="20.0" layoutY="80.0" spacing="10.0" prefWidth="300.0">
+            <children>
+
+                <Label text="Nouvelle Réservation" textFill="#333333">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+
+                <HBox spacing="10.0">
+                    <Label text="Client :" minWidth="80.0" />
+                    <ComboBox fx:id="clientComboBox" prefWidth="180.0" />
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <Label text="Véhicule :" minWidth="80.0" />
+                    <ComboBox fx:id="vehiculeComboBox" prefWidth="180.0" />
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <Label text="Chauffeur :" minWidth="80.0" />
+                    <ComboBox fx:id="chauffeurComboBox" prefWidth="180.0" />
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <Label text="Début :" minWidth="80.0" />
+                    <DatePicker fx:id="dateDebutPicker" prefWidth="180.0" />
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <Label text="Fin :" minWidth="80.0" />
+                    <DatePicker fx:id="dateFinPicker" prefWidth="180.0" />
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <Label text="Statut :" minWidth="80.0" />
+                    <ComboBox fx:id="statutComboBox" prefWidth="180.0" />
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <Button text="Ajouter" fx:id="ajouterBtn" onAction="#ajouterReservation"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+                    <Button text="Modifier" fx:id="modifierBtn" onAction="#modifierReservation"
+                            style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
+                    <Button text="Supprimer" fx:id="supprimerBtn" onAction="#supprimerReservation"
+                            style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+                    <Button text="Vider" fx:id="viderBtn" onAction="#viderFormulaire"
+                            style="-fx-background-color: #FF9800; -fx-text-fill: white;" />
+                </HBox>
+
+
+            </children>
+        </VBox>
+
+        <!-- Tableau des réservations -->
+        <TableView fx:id="tableViewReservations" layoutX="350.0" layoutY="80.0" prefHeight="450.0" prefWidth="560.0">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="40" />
+                <TableColumn fx:id="colClient" text="Client" prefWidth="100" />
+                <TableColumn fx:id="colVehicule" text="Véhicule" prefWidth="100" />
+                <TableColumn fx:id="colChauffeur" text="Chauffeur" prefWidth="100" />
+                <TableColumn fx:id="colDateDebut" text="Début" prefWidth="100" />
+                <TableColumn fx:id="colDateFin" text="Fin" prefWidth="100" />
+                <TableColumn fx:id="colStatut" text="Statut" prefWidth="100" />
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>

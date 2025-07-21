@@ -10,19 +10,13 @@ public class Chauffeur {
     private int id;
 
     private String nom;
-
     private String prenom;
-
     private int telephone;
-
     private boolean dispo;
-
     private double tarif;
 
-
-    //Constructeurs
-    public Chauffeur() {
-    }
+    // Constructeurs
+    public Chauffeur() {}
 
     public Chauffeur(String nom, String prenom, int telephone, boolean dispo) {
         this.nom = nom;
@@ -47,8 +41,7 @@ public class Chauffeur {
         this.dispo = dispo;
     }
 
-    //Getters et setters
-
+    // Getters et setters
     public int getId() {
         return id;
     }

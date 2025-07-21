@@ -1,11 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionChauffeurController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.GestionChauffeurController">
    <children>
-      <Label layoutX="72.0" layoutY="58.0" text="Gestion Chauffeur" />
+      <!-- En-tête -->
+      <Label layoutX="320.0" layoutY="15.0" text="Gestion des Chauffeurs" textFill="#9ca2b0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+
+      <!-- Recherche -->
+      <HBox layoutX="20.0" layoutY="55.0" spacing="15.0">
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Rechercher par nom/prénom:" />
+                  <TextField fx:id="txtRecherche" prefWidth="250.0" promptText="Saisir nom ou prénom..." />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="" />
+                  <Button fx:id="btnRechercher" onAction="#rechercherChauffeur" prefWidth="100.0" text="Rechercher" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="" />
+                  <Button fx:id="btnReset" onAction="#resetFilters" prefWidth="100.0" text="Réinitialiser" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+      <!-- Boutons d'action -->
+      <HBox layoutX="20.0" layoutY="125.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnAjouter" onAction="#ajouterChauffeur" prefWidth="120.0" style="-fx-background-color: #3c8fb2; -fx-text-fill: white;" text="Ajouter Chauffeur" />
+            <Button fx:id="btnModifier" disable="true" onAction="#modifierChauffeur" prefWidth="100.0" text="Modifier" />
+            <Button fx:id="btnSupprimer" disable="true" onAction="#supprimerChauffeur" prefWidth="100.0" style="-fx-background-color: #ff5d5d; -fx-text-fill: white;" text="Supprimer" />
+            <Button fx:id="btnActualiser" onAction="#actualiserListe" prefWidth="100.0" text="Actualiser" />
+         </children>
+      </HBox>
+
+      <!-- Tableau -->
+      <TableView fx:id="tableViewChauffeurs" layoutX="20.0" layoutY="165.0" prefHeight="300.0" prefWidth="857.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="colNom" prefWidth="120.0" text="Nom" />
+            <TableColumn fx:id="colPrenom" prefWidth="120.0" text="Prénom" />
+            <TableColumn fx:id="colTelephone" prefWidth="140.0" text="Téléphone" />
+            <TableColumn fx:id="colDisponible" prefWidth="100.0" text="Disponible" />
+         </columns>
+      </TableView>
+
+      <!-- Champs de formulaire -->
+      <HBox layoutX="20.0" layoutY="475.0" spacing="20.0">
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Nom" />
+                  <TextField fx:id="nomField" promptText="Nom du chauffeur" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Prénom" />
+                  <TextField fx:id="prenomField" promptText="Prénom du chauffeur" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Téléphone" />
+                  <TextField fx:id="telephoneField" promptText="Numéro de téléphone" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="" />
+                  <CheckBox fx:id="disponibiliteCheckBox" text="Disponible" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+      <!-- Barre de statut -->
+      <HBox layoutX="20.0" layoutY="555.0" spacing="20.0" style="-fx-background-color: #f5f5f5; -fx-padding: 5px;">
+         <children>
+            <Label fx:id="lblStatut" style="-fx-font-weight: bold;" text="Prêt" />
+            <Label fx:id="lblDerniereMaj" text="Dernière mise à jour: --:--:--" />
+         </children>
+      </HBox>
+
    </children>
 </AnchorPane>
