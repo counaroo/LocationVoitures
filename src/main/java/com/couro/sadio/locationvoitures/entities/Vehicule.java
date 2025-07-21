@@ -15,9 +15,12 @@ public class Vehicule {
 
     private double tarif;
 
+    private double prixParJour;
+
     private Boolean dispo;
 
     private String immatriculation;
+
 
     public Vehicule() {
     }
@@ -70,6 +73,10 @@ public class Vehicule {
     public void setTarif(double tarif) {
         this.tarif = tarif;
     }
+     public double getPrixParJour() {
+        return prixParJour;
+    }
+
 
     public Boolean getDispo() {
         return dispo;

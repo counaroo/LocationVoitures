@@ -19,7 +19,7 @@ public abstract class Utilisateur {
     private int telephone;
 
     @Enumerated(EnumType.STRING)  // ← Ajoutez cette annotation
-    @Column(name = "role")
+    @Column(nullable = false)
     private Role role;
 
     private String login;

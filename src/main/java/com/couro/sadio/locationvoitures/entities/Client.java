@@ -1,25 +1,21 @@
 package com.couro.sadio.locationvoitures.entities;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "clients")
-@DiscriminatorValue("CLIENT")
-public class Client extends Utilisateur{
+@DiscriminatorValue("Client")
+public class Client extends Utilisateur {
     private String email;
-
-    private int pointsFidelite;
-
-    private  String adresse;
+    private Integer pointsFidelite;
+    private String adresse;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
     private List<Reservation> reservations = new ArrayList<>();
 
-    //Constructeur
     public Client() {
+        this.setRole(Role.CLIENT);
     }
 
     public Client(String nom, String prenom, int telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse) {
@@ -30,7 +26,7 @@ public class Client extends Utilisateur{
         this.setRole(Role.CLIENT);
     }
 
-    public Client(int id, String nom, String prenom, int telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse) {
+    public Client(int id, String nom, String prenom, Integer telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse) {
         super(id, nom, prenom, telephone, role, login, motDePasse);
         this.email = email;
         this.pointsFidelite = pointsFidelite;
@@ -38,48 +34,25 @@ public class Client extends Utilisateur{
         this.setRole(Role.CLIENT);
     }
 
-    //Getter and setter
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public String getEmail() {
-        return email;
-    }
+    public int getPointsFidelite() { return pointsFidelite; }
+    public void setPointsFidelite(int pointsFidelite) { this.pointsFidelite = pointsFidelite; }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getAdresse() { return adresse; }
+    public void setAdresse(String adresse) { this.adresse = adresse; }
 
-    public int getPointsFidelite() {
-        return pointsFidelite;
-    }
+    public List<Reservation> getReservations() { return reservations; }
+    public void setReservations(List<Reservation> reservations) { this.reservations = reservations; }
 
-    public void setPointsFidelite(int pointsFidelite) {
-        this.pointsFidelite = pointsFidelite;
-    }
-
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
-    public void addReservation(Reservation reservation){
+    public void addReservation(Reservation reservation) {
         reservations.add(reservation);
         reservation.setClient(this);
     }
 
     @Override
     public String toString() {
-        return getPrenom() + " " + getNom(); // ou juste getNom() si tu préfères
+        return getPrenom() + " " + getNom();
     }
-
 }

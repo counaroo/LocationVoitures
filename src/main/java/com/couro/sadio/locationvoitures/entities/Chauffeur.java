@@ -14,6 +14,8 @@ public class Chauffeur {
     private int telephone;
     private boolean dispo;
     private double tarif;
+    private double prixParJour;
+
 
     // Constructeurs
     public Chauffeur() {}
@@ -45,6 +47,11 @@ public class Chauffeur {
     public int getId() {
         return id;
     }
+
+    public double getPrixParJour() {
+        return prixParJour;
+    }
+
 
     public void setId(int id) {
         this.id = id;

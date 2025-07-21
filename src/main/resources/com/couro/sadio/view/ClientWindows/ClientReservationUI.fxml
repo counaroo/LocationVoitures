@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.couro.sadio.locationvoitures.controller.clientControllers.ClientReservationController">
+
+    <center>
+        <VBox spacing="15" padding="20">
+            <Label text="Réserver un véhicule" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10">
+                <Label text="Véhicule:"/>
+                <ComboBox fx:id="vehiculeCombo"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Date de début:"/>
+                <DatePicker fx:id="dateDebutPicker"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Date de fin:"/>
+                <DatePicker fx:id="dateFinPicker"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <CheckBox fx:id="avecChauffeurCheck" text="Avec chauffeur"/>
+                <ComboBox fx:id="chauffeurCombo" promptText="Choisir un chauffeur"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Montant véhicule:"/>
+                <Label fx:id="montantVehiculeLabel"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Montant chauffeur:"/>
+                <Label fx:id="montantChauffeurLabel"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Montant total:"/>
+                <Label fx:id="montantTotalLabel"/>
+            </HBox>
+
+            <HBox spacing="15">
+                <Button fx:id="simulerReservationButton" text="Voir le montant" onAction="#simulerReservation"/>
+                <Button fx:id="validerReservationButton" text="Valider la réservation" onAction="#validerReservation"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
