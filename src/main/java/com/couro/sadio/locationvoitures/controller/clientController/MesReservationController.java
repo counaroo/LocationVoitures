@@ -168,7 +168,7 @@ public class MesReservationController implements Initializable, ControlledScreen
 
         // Colonne Statut
         colStatut.setCellValueFactory(cellData -> {
-            StatutReservation statut = cellData.getValue().isStatut();
+            StatutReservation statut = cellData.getValue().getStatut();
             return new SimpleStringProperty(statut != null ? statut.getLibelle() : "N/A");
         });
 
@@ -223,8 +223,8 @@ public class MesReservationController implements Initializable, ControlledScreen
                     btnVoirDetails.setDisable(!reservationSelectionnee);
                     // Seules les réservations EN_ATTENTE et CONFIRMEE peuvent être annulées
                     boolean peutEtreAnnulee = reservationSelectionnee &&
-                            (newValue.isStatut() == StatutReservation.EN_ATTENTE ||
-                                    newValue.isStatut() == StatutReservation.CONFIRMEE);
+                            (newValue.getStatut() == StatutReservation.EN_ATTENTE ||
+                                    newValue.getStatut() == StatutReservation.CONFIRMEE);
                     btnAnnuler.setDisable(!peutEtreAnnulee);
 
                     // Mettre à jour le label des détails
@@ -275,7 +275,7 @@ public class MesReservationController implements Initializable, ControlledScreen
         // Compter les réservations actives (EN_ATTENTE, CONFIRMEE, EN_COURS)
         long reservationsActives = reservations.stream()
                 .mapToLong(r -> {
-                    StatutReservation statut = r.isStatut();
+                    StatutReservation statut = r.getStatut();
                     return (statut == StatutReservation.EN_ATTENTE ||
                             statut == StatutReservation.CONFIRMEE ||
                             statut == StatutReservation.EN_COURS) ? 1 : 0;
@@ -284,7 +284,7 @@ public class MesReservationController implements Initializable, ControlledScreen
 
         // Compter les réservations annulées
         long reservationsAnnulees = reservations.stream()
-                .mapToLong(r -> r.isStatut() == StatutReservation.ANNULEE ? 1 : 0)
+                .mapToLong(r -> r.getStatut() == StatutReservation.ANNULEE ? 1 : 0)
                 .sum();
 
         lblTotalReservations.setText("Total réservations: " + totalReservations);
@@ -318,7 +318,7 @@ public class MesReservationController implements Initializable, ControlledScreen
             return;
         }
 
-        StatutReservation statutActuel = reservationSelectionnee.isStatut();
+        StatutReservation statutActuel = reservationSelectionnee.getStatut();
 
         // Vérifier si la réservation peut être annulée
         if (statutActuel == StatutReservation.ANNULEE) {

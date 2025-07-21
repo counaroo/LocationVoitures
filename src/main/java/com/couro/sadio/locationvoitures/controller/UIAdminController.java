@@ -79,6 +79,13 @@ public class UIAdminController implements Initializable ,UILoginController.Contr
         contentArea.getChildren().setAll(fxml);
     }
 
+    public void showReservationPanel(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/AdminWindows/GestionReservation.fxml"));
+        contentArea.getChildren().clear();
+        contentArea.getChildren().setAll(fxml);
+    }
+
+
 
     @Override
     public void setUserData(Utilisateur user) {

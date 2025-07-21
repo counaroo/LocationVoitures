@@ -76,4 +76,10 @@ public class Client extends Utilisateur{
         reservations.add(reservation);
         reservation.setClient(this);
     }
+
+    @Override
+    public String toString() {
+        return getPrenom() + " " + getNom(); // ou juste getNom() si tu préfères
+    }
+
 }

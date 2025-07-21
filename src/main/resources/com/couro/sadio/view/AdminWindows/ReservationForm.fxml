@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.couro.sadio.locationvoitures.controller.adminControllers.UIReservationController"
+            prefWidth="800" prefHeight="500"
+            stylesheets="@../style.css" styleClass="main-pane">
+
+
+    <VBox alignment="TOP_LEFT" spacing="20" layoutX="50" layoutY="30" prefWidth="700">
+        <children>
+
+            <Label text="📝 Nouvelle Réservation"
+                   styleClass="title-label" />
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Client :" styleClass="form-label" />
+                <ComboBox fx:id="clientComboBox" prefWidth="400" styleClass="form-combo" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Véhicule :" styleClass="form-label" />
+                <ComboBox fx:id="vehiculeComboBox" prefWidth="400" styleClass="form-combo" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Chauffeur (optionnel) :" styleClass="form-label" />
+                <ComboBox fx:id="chauffeurComboBox" prefWidth="400" styleClass="form-combo" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Date Début :" styleClass="form-label" />
+                <DatePicker fx:id="dateDebutPicker" prefWidth="200" styleClass="form-date" />
+                <Label text="Date Fin :" styleClass="form-label" />
+                <DatePicker fx:id="dateFinPicker" prefWidth="200" styleClass="form-date" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Statut :" styleClass="form-label" />
+                <ComboBox fx:id="statutComboBox" prefWidth="200" styleClass="form-combo" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="✅ Valider Réservation"
+                        fx:id="btnValider"
+                        onAction="#validerReservation"
+                        styleClass="btn-primary" prefWidth="200" />
+            </HBox>
+
+        </children>
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    </VBox>
+
+</AnchorPane>

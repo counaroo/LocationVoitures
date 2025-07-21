@@ -5,16 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8aa9755-dc42-473b-bd33-0d51421d825b" name="Changes" comment="hello">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/ProfileClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/ProfileClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/modele/ClientModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/modele/ClientModele.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionEmploye.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/GestionEmploye.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/AccueilClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/AccueilClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/ProfileClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/ProfileClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UILogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UILogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,20 +14,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
-        <option value="Class" />
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="FxmlFile" />
+        <option value="Exception" />
+
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -58,27 +41,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MainApplication.executor": "Run",
-    "Application.MainTest1.executor": "Run",
-    "Application.MainTest2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "298",
-    "git-widget-placeholder": "Mohamed",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/LocationVoitures/src/main/resources",
-    "settings.editor.selected.configurable": "preferences.keymap"
+
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.couro.sadio.locationvoitures.interfaces" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\LocationVoitures\src\main\resources" />
       <recent name="C:\LocationVoitures\src\main\resources\com\couro\sadio\locationvoitures" />
@@ -135,8 +101,6 @@
         <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainTest1" />
         <item itemvalue="Application.MainTest2" />
-        <item itemvalue="Application.MainApplication" />
-        <item itemvalue="Application.MainTest1" />
       </list>
     </recent_temporary>
   </component>
