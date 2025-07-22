@@ -35,6 +35,15 @@ public class Chauffeur {
         this.tarif = tarif;
     }
 
+    public Chauffeur(int id,String nom, String prenom, int telephone, boolean dispo, double tarif) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+        this.dispo = dispo;
+        this.tarif = tarif;
+    }
+
     public Chauffeur(int id, String nom, String prenom, int telephone, boolean dispo) {
         this.id = id;
         this.nom = nom;
@@ -96,4 +105,10 @@ public class Chauffeur {
     public void setTarif(double tarif) {
         this.tarif = tarif;
     }
+
+    @Override
+    public String toString() {
+        return nom + " " + prenom + " - Tel: " + telephone;
+    }
+
 }

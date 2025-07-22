@@ -4,6 +4,10 @@ import com.couro.sadio.locationvoitures.dao.impl.HibernateChauffeurDaoImpl;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateReservationDaoImpl;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateVehiculeDaoImpl;
 import com.couro.sadio.locationvoitures.entities.*;
+import com.couro.sadio.locationvoitures.modele.ChauffeurModele;
+import com.couro.sadio.locationvoitures.modele.FactureModele;
+import com.couro.sadio.locationvoitures.modele.ReservationModele;
+import com.couro.sadio.locationvoitures.modele.VehiculeModele;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -24,9 +28,9 @@ public class ClientReservationController {
     @FXML private Button simulerReservationButton;
     @FXML private Button validerReservationButton;
 
-    private final HibernateVehiculeDaoImpl vehiculeDao = new HibernateVehiculeDaoImpl(Vehicule.class);
-    private final HibernateChauffeurDaoImpl chauffeurDao = new HibernateChauffeurDaoImpl(Chauffeur.class);
-    private final HibernateReservationDaoImpl reservationDao = new HibernateReservationDaoImpl(Reservation.class);
+    private final VehiculeModele vehiculeDao = new VehiculeModele();
+    private final ChauffeurModele chauffeurDao = new ChauffeurModele();
+    private final ReservationModele reservationDao = new ReservationModele();
 
     private Client clientActuel;
 
@@ -37,11 +41,11 @@ public class ClientReservationController {
     @FXML
     public void initialize() {
         // Chargement des véhicules
-        List<Vehicule> vehicules = vehiculeDao.findAll();
+        List<Vehicule> vehicules = vehiculeDao.lister();
         vehiculeCombo.setItems(FXCollections.observableArrayList(vehicules));
 
         // Chargement des chauffeurs disponibles
-        List<Chauffeur> chauffeurs = chauffeurDao.findAllDispos();
+        List<Chauffeur> chauffeurs = chauffeurDao.lister();
         chauffeurCombo.setItems(FXCollections.observableArrayList(chauffeurs));
 
         // État initial
@@ -70,7 +74,7 @@ public class ClientReservationController {
         }
 
         int jours = (int) java.time.temporal.ChronoUnit.DAYS.between(debut, fin);
-        double montantVehicule = v.getPrixParJour() * jours;
+        double montantVehicule = v.getTarif() * jours;
         double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getPrixParJour() * jours : 0;
 
         montantVehiculeLabel.setText(montantVehicule + " FCFA");
@@ -85,23 +89,65 @@ public class ClientReservationController {
         LocalDateTime debut = dateDebutPicker.getValue() != null ? dateDebutPicker.getValue().atStartOfDay() : null;
         LocalDateTime fin = dateFinPicker.getValue() != null ? dateFinPicker.getValue().atStartOfDay() : null;
 
+        // Validation des champs
         if (v == null || debut == null || fin == null || fin.isBefore(debut)) {
             showAlert("Erreur", "Champs invalides. Veuillez vérifier vos dates et votre sélection.");
             return;
         }
 
+        // Vérification si un chauffeur est requis mais non sélectionné
+        if (avecChauffeurCheck.isSelected() && c == null) {
+            showAlert("Erreur", "Veuillez sélectionner un chauffeur.");
+            return;
+        }
+
+        // Calcul du nombre de jours et des montants
         int jours = (int) java.time.temporal.ChronoUnit.DAYS.between(debut, fin);
-        double montantVehicule = v.getPrixParJour() * jours;
-        double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getPrixParJour() * jours : 0;
+        if (jours == 0) {
+            jours = 1; // Minimum 1 jour pour la location
+        }
 
-        Reservation reservation = avecChauffeurCheck.isSelected()
-                ? new Reservation(clientActuel, v, LocalDateTime.now(), StatutReservation.EN_ATTENTE, debut, fin, c, montantVehicule, montantChauffeur)
-                : new Reservation(clientActuel, v, LocalDateTime.now(), StatutReservation.EN_ATTENTE, debut, fin, montantVehicule);
+        // Utilisation des bonnes méthodes selon les entités
+        double montantVehicule = v.getTarif() * jours; // Vehicule utilise getTarif(), pas getPrixParJour()
+        double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getTarif() * jours : 0; // Chauffeur utilise getTarif(), pas getPrixParJour()
 
-        reservationDao.save(reservation);
+        // Création de la réservation selon le constructeur approprié
+        Reservation reservation;
+        if (avecChauffeurCheck.isSelected() && c != null) {
+            // Avec chauffeur
+            reservation = new Reservation(clientActuel, v, LocalDateTime.now(), StatutReservation.EN_ATTENTE,
+                    debut, fin, c, montantVehicule, montantChauffeur);
+        } else {
+            // Sans chauffeur
+            reservation = new Reservation(clientActuel, v, LocalDateTime.now(), StatutReservation.EN_ATTENTE,
+                    debut, fin, montantVehicule);
+        }
 
-        showAlert("Succès", "Votre réservation a été enregistrée avec succès !");
-        resetForm();
+        try {
+            // Sauvegarde de la réservation
+            reservationDao.create(reservation);
+
+            // Mise à jour de la disponibilité du véhicule
+            v.setDispo(false);
+            vehiculeDao.update(v);
+
+            // Mise à jour de la disponibilité du chauffeur si nécessaire
+            if (avecChauffeurCheck.isSelected() && c != null) {
+                c.setDispo(false);
+                chauffeurDao.update(c);
+            }
+
+            showAlert("Succès", "Votre réservation a été enregistrée avec succès !");
+            resetForm();
+
+        } catch (Exception e) {
+            showAlert("Erreur", "Une erreur s'est produite lors de l'enregistrement : " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        FactureModele factureModele = new FactureModele();
+        Facture facture = new Facture(reservation,reservation.getMontantTotale(),reservation.getDate(),StatutFacture.EN_ATTENTE);
+        factureModele.create(facture);
     }
 
     private void resetForm() {

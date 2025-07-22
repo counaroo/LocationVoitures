@@ -55,8 +55,8 @@ public class UIClientController implements Initializable, UILoginController.Cont
         loadView("/com/couro/sadio/view/ClientWindows/ProfileClient.fxml", currentUser);
     }
 
-    public void showAccueil(ActionEvent event) {
-        loadView("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml", currentUser);
+    public void showFacture(ActionEvent event) {
+        loadView("/com/couro/sadio/view/ClientWindows/MesFactures.fxml", currentUser);
     }
 
     private void loadView(String fxmlPath, Utilisateur user) {

@@ -31,6 +31,7 @@
         <mapping class="com.couro.sadio.locationvoitures.entities.Reservation"/>
         <mapping class="com.couro.sadio.locationvoitures.entities.Vehicule"/>
         <mapping class="com.couro.sadio.locationvoitures.entities.Chauffeur"/>
+        <mapping class="com.couro.sadio.locationvoitures.entities.Facture"/>
 
     </session-factory>
 </hibernate-configuration>

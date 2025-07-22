@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.couro.sadio.locationvoitures.controller.clientController.MesFacturesController"
+      spacing="10"
+      alignment="CENTER"
+      style="-fx-background-color: #f5f5f5;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Mes Factures" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <TableView fx:id="factureTable" prefHeight="400" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colId" text="ID Facture" prefWidth="100"/>
+            <TableColumn fx:id="colMontant" text="Montant (FCFA)" prefWidth="150"/>
+            <TableColumn fx:id="colReservation" text="Réservation ID" prefWidth="150"/>
+            <TableColumn fx:id="colStatut" text="Statut Réservation" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

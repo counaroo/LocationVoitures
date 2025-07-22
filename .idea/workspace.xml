@@ -4,19 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2828a1de-41c3-4671-b177-9c80ff236e72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_21_10_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_21_10__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_21_18_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_21_18__Changes_.xml" afterDir="false" />
+    <list default="true" id="2828a1de-41c3-4671-b177-9c80ff236e72" name="Changes" comment="douniou am">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesFacturesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/dao/impl/HibernateFactureDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Facture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/StatutFacture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/modele/FactureModele.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/MesFactures.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/ClientReservationUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/ClientReservationUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/MesReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/MesReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/ClientReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/ClientReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Chauffeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Chauffeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Vehicule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIClient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -38,17 +42,39 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "counaroo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/counaroo/LocationVoitures.git",
+    "accountId": "704b3287-4e88-4011-90d6-ace1b26fc9fd"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="30EoiOgjOPV4RMlcdm4Vg7P4JHM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.MainApplication.executor": "Run",
     "Application.MainTest1.executor": "Run",
-    "git-widget-placeholder": "feature/admin-couro"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/admin-couro",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.MainApplication">
+  <component name="RunManager" selected="Application.MainTest1">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.couro.sadio.locationvoitures.Runtime.MainApplication" />
       <module name="LocationVoitures" />
@@ -90,13 +116,34 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainTest1" />
+        <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainTest2" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2828a1de-41c3-4671-b177-9c80ff236e72" name="Changes" comment="" />
+      <created>1753202220881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753202220881</updated>
+    </task>
+    <task id="LOCAL-00001" summary="douniou am">
+      <option name="closed" value="true" />
+      <created>1753202415708</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753202415708</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="douniou am" />
+    <option name="LAST_COMMIT_MESSAGE" value="douniou am" />
   </component>
 </project>

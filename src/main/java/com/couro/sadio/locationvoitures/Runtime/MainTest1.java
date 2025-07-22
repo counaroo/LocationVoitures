@@ -7,7 +7,8 @@ import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testerCreationAdmin();
+        testerAjouterVehicule();
+
     }
 
     //Admin test
@@ -78,10 +79,10 @@ public class MainTest1 {
     public static  void testerAjouterVehicule(){
         VehiculeModele vehiculeModele = new VehiculeModele();
 
-        Vehicule vehicule1 = new Vehicule("Bmw","M5CS",400000,true,"AA-132-SN");
-        Vehicule vehicule2 = new Vehicule("Aston Martin","DBX",450000,true,"AA-662-NA");
-        Vehicule vehicule3 = new Vehicule("Mercedes","C63-AMG-BlackSeries",400000,true,"AA-012-BA");
-        Vehicule vehicule4 = new Vehicule("Bmw","x1",80000,true,"AA-300-BC");
+        Vehicule vehicule1 = new Vehicule("Bmw","M5CS",400000.0,true,"AA-132-SN");
+        Vehicule vehicule2 = new Vehicule("Aston Martin","DBX",450000.0,true,"AA-662-NA");
+        Vehicule vehicule3 = new Vehicule("Mercedes","C63-AMG-BlackSeries",400000.0,true,"AA-012-BA");
+        Vehicule vehicule4 = new Vehicule("Bmw","x1",80000.0,true,"AA-300-BC");
 
         vehiculeModele.create(vehicule1);
         vehiculeModele.create(vehicule2);
