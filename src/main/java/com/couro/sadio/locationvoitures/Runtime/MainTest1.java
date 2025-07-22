@@ -7,15 +7,14 @@ import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testetModifierReservation();
-
+        testerCreationAdmin();
     }
 
     //Admin test
     public static void testerCreationAdmin(){
         Testeur testeur = new Testeur();
 
-        Administrateur administrateur = new Administrateur("Sadio","Mohamed",760121099, Role.ADMIN,"admin","passer");
+        Administrateur administrateur = new Administrateur("Wane","Couro",760121099, Role.ADMIN,"admin","passer");
         testeur.creerAdmin(administrateur);
     }
 
@@ -125,4 +124,6 @@ public class MainTest1 {
         Chauffeur chauffeur = new Chauffeur("Tsunoda","Yuki",760120012,true);
         chauffeurModele.create(chauffeur);
     }
+
+
 }

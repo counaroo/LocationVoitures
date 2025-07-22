@@ -4,10 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.couro.sadio.locationvoitures.controller.clientControllers.ClientReservationController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.couro.sadio.locationvoitures.controller.clientController.ClientReservationController">
 
     <center>
-        <VBox spacing="15" padding="20">
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
             <Label text="Réserver un véhicule" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
             <HBox spacing="10">

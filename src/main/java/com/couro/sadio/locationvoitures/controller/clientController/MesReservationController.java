@@ -11,9 +11,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
@@ -412,4 +417,33 @@ public class MesReservationController implements Initializable, ControlledScreen
     public Utilisateur getUtilisateurConnecte() {
         return utilisateurConnecte;
     }
+
+    @FXML
+    public void AjouterReservation(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/couro/sadio/view/ClientWindows/ClientReservationUI.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Ajout Réservation");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (Exception e) {
+            afficherErreur("Erreur lors du chargement de l'interface", e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
+    private void showError(String s) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur de connexion");
+        alert.setHeaderText(null);
+        alert.setContentText(s);
+        alert.showAndWait();
+
+    }
+
 }

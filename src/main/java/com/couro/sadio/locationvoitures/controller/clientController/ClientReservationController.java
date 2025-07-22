@@ -1,4 +1,4 @@
-package com.couro.sadio.locationvoitures.controller.clientControllers;
+package com.couro.sadio.locationvoitures.controller.clientController;
 
 import com.couro.sadio.locationvoitures.dao.impl.HibernateChauffeurDaoImpl;
 import com.couro.sadio.locationvoitures.dao.impl.HibernateReservationDaoImpl;
