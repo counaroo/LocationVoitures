@@ -41,18 +41,12 @@ public class UIAdminController implements Initializable ,UILoginController.Contr
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
-            Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/AdminWindows/UIDashboard.fxml"));
+            Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/AdminWindows/GestionReservation.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
         } catch (IOException e) {
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null, e);
         }
-    }
-
-    public void showDashboard(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(getClass().getResource("/com/couro/sadio/view/AdminWindows/UIDashboard.fxml"));
-        contentArea.getChildren().clear();
-        contentArea.getChildren().setAll(fxml);
     }
 
     public void showClientPanel(ActionEvent event) throws IOException{

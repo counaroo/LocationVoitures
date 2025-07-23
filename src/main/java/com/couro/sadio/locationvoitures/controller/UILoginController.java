@@ -53,13 +53,7 @@ public class UILoginController {
         }
     }
 
-    /**
-     * Méthode générique pour naviguer vers une nouvelle interface
-     * @param event L'événement d'action
-     * @param fxmlPath Chemin vers le fichier FXML de la nouvelle interface
-     * @param title Titre de la nouvelle fenêtre
-     * @param user L'utilisateur connecté (peut être null)
-     */
+
     private void navigateToInterface(ActionEvent event, String fxmlPath, String title, Utilisateur user) {
         try {
             // Fermer la fenêtre actuelle

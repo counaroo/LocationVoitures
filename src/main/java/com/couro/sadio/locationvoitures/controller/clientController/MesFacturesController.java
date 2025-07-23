@@ -179,6 +179,7 @@ public class MesFacturesController implements ControlledScreen {
 
                 // Déduire le montant du portefeuille du client
                 client.setPortefeuille(client.getPortefeuille() - factureSelectionne.getMontant());
+                client.setPointsFidelite(client.getPointsFidelite()+20);
                 clientModele.update(client);
 
                 // Mettre à jour le statut de la réservation si elle existe
@@ -186,8 +187,9 @@ public class MesFacturesController implements ControlledScreen {
                     ReservationModele reservationModele = new ReservationModele();
                     Reservation reservation = reservationModele.read(factureSelectionne.getReservation().getId());
                     reservation.setStatut(StatutReservation.CONFIRMEE);
-                    reservationModele.update(reservation); // ⚠️ AJOUT IMPORTANT : sauvegarder la réservation
+                    reservationModele.update(reservation);
                 }
+
 
                 // Actualiser l'affichage
                 chargerFacturesClient();

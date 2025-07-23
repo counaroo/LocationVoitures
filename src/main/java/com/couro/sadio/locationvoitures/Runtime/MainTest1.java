@@ -7,14 +7,14 @@ import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testerUpdateClient();
+        testerCreationAdmin();
     }
 
     //Admin test
     public static void testerCreationAdmin(){
         Testeur testeur = new Testeur();
 
-        Administrateur administrateur = new Administrateur("Wane","Couro",760121099, Role.ADMIN,"admin","passer");
+        Administrateur administrateur = new Administrateur("Sadio","Mohamed",760121099, Role.ADMIN,"mohamedLogin","passer");
         testeur.creerAdmin(administrateur);
     }
 

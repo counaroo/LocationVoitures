@@ -309,6 +309,7 @@ public class GestionClientController implements Initializable {
                     clientsData.remove(clientSelectionne);
                     mettreAJourStatistiques();
                     mettreAJourStatut("Client supprimé avec succès");
+                    afficherInfo("Success","Client supprimé avec succés ");
                 } catch (Exception e) {
                     afficherAlerte("Erreur", "Impossible de supprimer le client: " + e.getMessage());
                 }

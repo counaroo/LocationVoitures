@@ -44,7 +44,7 @@ public class UIClientController implements Initializable, UILoginController.Cont
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadView("/com/couro/sadio/view/ClientWindows/AccueilClient.fxml", null);
+        loadView("/com/couro/sadio/view/ClientWindows/MesReservation.fxml", currentUser);
     }
 
     public void showMesReservations(ActionEvent event) {

@@ -7,16 +7,14 @@
     <list default="true" id="2828a1de-41c3-4671-b177-9c80ff236e72" name="Changes" comment="douniou am">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/Runtime/MainTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/FormClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/FormClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/ClientReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/ClientReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UIClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UILoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/UILoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/DashboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/adminControllers/GestionClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesFacturesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesFacturesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/controller/clientController/MesReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Chauffeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Chauffeur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/couro/sadio/locationvoitures/entities/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/ClientReservationUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/ClientReservationUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/MesFactures.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/ClientWindows/MesFactures.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/AdminWindows/UIDashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/couro/sadio/view/UIAdmin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +66,7 @@
     &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.MainTest1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/admin-couro&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
