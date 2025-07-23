@@ -2,6 +2,7 @@ package com.couro.sadio.locationvoitures.controller.adminControllers;
 
 import com.couro.sadio.locationvoitures.dao.impl.*;
 import com.couro.sadio.locationvoitures.entities.*;
+import com.couro.sadio.locationvoitures.modele.FactureModele;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -102,6 +103,10 @@ public class GestionReservationController {
         showAlert("Réservation ajoutée avec succès.");
         viderFormulaire(null);
         chargerReservations();
+
+        FactureModele factureModele = new FactureModele();
+        Facture facture = new Facture(nouvelleReservation,nouvelleReservation.getMontantTotale(),nouvelleReservation.getDate(),StatutFacture.EN_ATTENTE);
+        factureModele.create(facture);
     }
 
     @FXML

@@ -7,15 +7,14 @@ import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testetModifierReservation();
-
+        testerCreationAdmin();
     }
 
     //Admin test
     public static void testerCreationAdmin(){
         Testeur testeur = new Testeur();
 
-        Administrateur administrateur = new Administrateur("Sadio","Mohamed",760121099, Role.ADMIN,"admin","passer");
+        Administrateur administrateur = new Administrateur("Sadio","Mohamed",760121099, Role.ADMIN,"mohamedLogin","passer");
         testeur.creerAdmin(administrateur);
     }
 
@@ -42,17 +41,17 @@ public class MainTest1 {
     }
 
     //Client test
-    public static void testerCreerClient(){
-        Client client = new Client("Sadio","Abdoul Aziz",778392552, Role.CLIENT,"client1","passer","AbdoulAzizSadio@gmail.com",0,"Mariste");
-        Client client1 = new Client("Faye","Mariama",774101299, Role.CLIENT,"client2","passer","Mariama@gmail.com",0,"Rufisque");
-        Client client2 = new Client("Sambe","Abdoul Aziz",771236910, Role.CLIENT,"client3","passer","AbdoulAzizSambe@gmail.com",0,"Thies");
-        Client client3 = new Client("Samb","ibrahima",771234567, Role.CLIENT,"client4","passer","Ibrahima@gmail.com",0,"Mariste");
+    public static void testerUpdateClient(){
+        Client client = new Client(2,"Sadio","Abdoul Aziz",778392552, Role.CLIENT,"client1","passer","AbdoulAzizSadio@gmail.com",0,"Mariste",500000000);
+        Client client1 = new Client(3,"Faye","Mariama",774101299, Role.CLIENT,"client2","passer","Mariama@gmail.com",0,"Rufisque",2000000000);
+        Client client2 = new Client(4,"Sambe","Abdoul Aziz",771236910, Role.CLIENT,"client3","passer","AbdoulAzizSambe@gmail.com",0,"Thies",600000000);
+        Client client3 = new Client(5,"Samb","ibrahima",771234567, Role.CLIENT,"client4","passer","Ibrahima@gmail.com",0,"Mariste",950000000);
 
         ClientModele clientModele = new ClientModele();
-        clientModele.create(client);
-        clientModele.create(client1);
-        clientModele.create(client2);
-        clientModele.create(client3);
+        clientModele.update(client);
+        clientModele.update(client1);
+        clientModele.update(client2);
+        clientModele.update(client3);
         clientModele.lister();
     }
 
@@ -79,10 +78,10 @@ public class MainTest1 {
     public static  void testerAjouterVehicule(){
         VehiculeModele vehiculeModele = new VehiculeModele();
 
-        Vehicule vehicule1 = new Vehicule("Bmw","M5CS",400000,true,"AA-132-SN");
-        Vehicule vehicule2 = new Vehicule("Aston Martin","DBX",450000,true,"AA-662-NA");
-        Vehicule vehicule3 = new Vehicule("Mercedes","C63-AMG-BlackSeries",400000,true,"AA-012-BA");
-        Vehicule vehicule4 = new Vehicule("Bmw","x1",80000,true,"AA-300-BC");
+        Vehicule vehicule1 = new Vehicule("Bmw","M5CS",400000.0,true,"AA-132-SN");
+        Vehicule vehicule2 = new Vehicule("Aston Martin","DBX",450000.0,true,"AA-662-NA");
+        Vehicule vehicule3 = new Vehicule("Mercedes","C63-AMG-BlackSeries",400000.0,true,"AA-012-BA");
+        Vehicule vehicule4 = new Vehicule("Bmw","x1",80000.0,true,"AA-300-BC");
 
         vehiculeModele.create(vehicule1);
         vehiculeModele.create(vehicule2);
@@ -119,10 +118,18 @@ public class MainTest1 {
         reservationModele.update(reservation);
     }
 
+    public static void testerDeleteReservation(){
+        ReservationModele reservationModele = new ReservationModele();
+        //reservationModele.delete(5);
+        reservationModele.delete(7);
+    }
+
     //Test Chauffeur
     public static  void testerCreationChauffeur(){
         ChauffeurModele chauffeurModele = new ChauffeurModele();
         Chauffeur chauffeur = new Chauffeur("Tsunoda","Yuki",760120012,true);
         chauffeurModele.create(chauffeur);
     }
+
+
 }

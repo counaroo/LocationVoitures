@@ -15,14 +15,16 @@ public class Vehicule {
 
     private double tarif;
 
+
     private Boolean dispo;
 
     private String immatriculation;
 
+
     public Vehicule() {
     }
 
-    public Vehicule(String marque, String modele, int tarif, Boolean dispo, String immatriculation) {
+    public Vehicule(String marque, String modele, double tarif, Boolean dispo, String immatriculation) {
         this.marque = marque;
         this.modele = modele;
         this.tarif = tarif;
@@ -30,7 +32,7 @@ public class Vehicule {
         this.immatriculation = immatriculation;
     }
 
-    public Vehicule(int id, String marque, String modele, int tarif, Boolean dispo, String immatriculation) {
+    public Vehicule(int id, String marque, String modele, double tarif, Boolean dispo, String immatriculation) {
         this.id = id;
         this.marque = marque;
         this.modele = modele;
@@ -86,4 +88,10 @@ public class Vehicule {
     public void setImmatriculation(String immatriculation) {
         this.immatriculation = immatriculation;
     }
+
+    @Override
+    public String toString() {
+        return marque + " " + modele + " - " + immatriculation;
+    }
+
 }

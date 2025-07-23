@@ -11,13 +11,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -58,6 +66,18 @@ public class MesReservationController implements Initializable, ControlledScreen
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
+    // Formatter pour les montants - évite la notation scientifique
+    private final DecimalFormat montantFormatter;
+
+    public MesReservationController() {
+        // Initialiser le formatter pour les montants
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.FRANCE);
+        symbols.setGroupingSeparator(' '); // Espace pour séparer les milliers
+        symbols.setDecimalSeparator(',');  // Virgule pour les décimales
+
+        montantFormatter = new DecimalFormat("#,##0.00", symbols);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialiser le modèle
@@ -79,14 +99,10 @@ public class MesReservationController implements Initializable, ControlledScreen
             // Mettre à jour les labels avec les informations utilisateur
             lblClientNom.setText(user.getNom() + " " + user.getPrenom());
 
-
             // Charger les réservations de l'utilisateur
             chargerReservationsUtilisateur();
         }
     }
-
-    // Reste du code identique...
-    // (Toutes les autres méthodes restent inchangées)
 
     /**
      * Configure les colonnes du tableau
@@ -152,7 +168,7 @@ public class MesReservationController implements Initializable, ControlledScreen
             return new SimpleStringProperty("Sans chauffeur");
         });
 
-        // Colonne Montant Total
+        // Colonne Montant Total - FORMATAGE CORRIGÉ
         colMontantTotal.setCellValueFactory(new PropertyValueFactory<>("montantTotale"));
         colMontantTotal.setCellFactory(column -> new TableCell<Reservation, Double>() {
             @Override
@@ -161,7 +177,8 @@ public class MesReservationController implements Initializable, ControlledScreen
                 if (empty || item == null) {
                     setText(null);
                 } else {
-                    setText(String.format("%.2f FCFA", item));
+                    // Utiliser le formatter personnalisé pour éviter la notation scientifique
+                    setText(montantFormatter.format(item) + " FCFA");
                 }
             }
         });
@@ -333,17 +350,17 @@ public class MesReservationController implements Initializable, ControlledScreen
             return;
         }
 
-        // Demander confirmation
+        // Demander confirmation - FORMATAGE DU MONTANT CORRIGÉ
         Optional<ButtonType> result = afficherConfirmation(
                 "Confirmation d'annulation",
                 String.format("Êtes-vous sûr de vouloir annuler la réservation #%d ?\n\n" +
-                                "Véhicule: %s\nPériode: %s - %s\nStatut actuel: %s\nMontant: %.2f FCFA",
+                                "Véhicule: %s\nPériode: %s - %s\nStatut actuel: %s\nMontant: %s FCFA",
                         reservationSelectionnee.getId(),
                         reservationSelectionnee.getVehicule().getMarque() + " " + reservationSelectionnee.getVehicule().getModele(),
                         reservationSelectionnee.getDateDebut().format(dateFormatter),
                         reservationSelectionnee.getDateFin().format(dateFormatter),
                         statutActuel.getLibelle(),
-                        reservationSelectionnee.getMontantTotale())
+                        montantFormatter.format(reservationSelectionnee.getMontantTotale()))
         );
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -367,10 +384,8 @@ public class MesReservationController implements Initializable, ControlledScreen
         }
     }
 
-
     @FXML
     public void voirDetails(ActionEvent event) {
-        // TODO: Implémenter la popup de détails
         System.out.println("Fonction voir détails à implémenter");
     }
 
@@ -411,5 +426,38 @@ public class MesReservationController implements Initializable, ControlledScreen
     // Getters
     public Utilisateur getUtilisateurConnecte() {
         return utilisateurConnecte;
+    }
+
+    @FXML
+    public void AjouterReservation(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/couro/sadio/view/ClientWindows/ClientReservationUI.fxml"));
+            Parent root = loader.load();
+
+            // Récupérer le contrôleur et passer les données utilisateur
+            ClientReservationController controller = loader.getController();
+            controller.setUserData(this.utilisateurConnecte);
+
+            Stage stage = new Stage();
+            stage.setTitle("Ajout Réservation");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+            // Optionnel : rafraîchir la liste après fermeture de la fenêtre d'ajout
+            rafraichirListe(actionEvent);
+
+        } catch (Exception e) {
+            afficherErreur("Erreur lors du chargement de l'interface", e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private void showError(String s) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur de connexion");
+        alert.setHeaderText(null);
+        alert.setContentText(s);
+        alert.showAndWait();
     }
 }

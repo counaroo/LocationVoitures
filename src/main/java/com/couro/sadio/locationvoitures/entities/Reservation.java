@@ -33,6 +33,10 @@ public class Reservation {
     @JoinColumn(name = "chauffeur_id")
     private Chauffeur chauffeur;
 
+    // Ajout de la relation avec la facture (OneToOne)
+    @OneToOne(mappedBy = "reservation", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Facture facture;
+
     private boolean avecChauffeur = false;
     private double montantVehicule;
     private double montantChauffeur;
@@ -132,4 +136,8 @@ public class Reservation {
 
     public int getNbrJour() { return nbrJour; }
     public void setNbrJour(int nbrJour) { this.nbrJour = nbrJour; }
+
+    // Getter et setter pour la facture
+    public Facture getFacture() { return facture; }
+    public void setFacture(Facture facture) { this.facture = facture; }
 }

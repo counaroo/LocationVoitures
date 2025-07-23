@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="417.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.couro.sadio.locationvoitures.controller.clientController.ClientReservationController">
+
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Réserver un véhicule" />
+
+            <HBox spacing="10">
+                <Label text="Véhicule:" />
+                <ComboBox fx:id="vehiculeCombo" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Date de début:" />
+                <DatePicker fx:id="dateDebutPicker" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Date de fin:" />
+                <DatePicker fx:id="dateFinPicker" />
+            </HBox>
+
+            <HBox spacing="10">
+                <CheckBox fx:id="avecChauffeurCheck" text="Avec chauffeur" />
+                <ComboBox fx:id="chauffeurCombo" promptText="Choisir un chauffeur" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Montant véhicule:" />
+                <Label fx:id="montantVehiculeLabel" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Montant chauffeur:" />
+                <Label fx:id="montantChauffeurLabel" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Montant total:" />
+                <Label fx:id="montantTotalLabel" />
+            </HBox>
+
+            <HBox spacing="15">
+                <Button fx:id="simulerReservationButton" onAction="#simulerReservation" text="Voir le montant" />
+                <Button fx:id="validerReservationButton" onAction="#validerReservation" text="Valider la réservation" />
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
