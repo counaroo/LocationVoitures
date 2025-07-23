@@ -7,8 +7,7 @@ import java.time.LocalDateTime;
 
 public class MainTest1 {
     public static void main(String[] args) {
-        testerAjouterVehicule();
-
+        testerUpdateClient();
     }
 
     //Admin test
@@ -42,17 +41,17 @@ public class MainTest1 {
     }
 
     //Client test
-    public static void testerCreerClient(){
-        Client client = new Client("Sadio","Abdoul Aziz",778392552, Role.CLIENT,"client1","passer","AbdoulAzizSadio@gmail.com",0,"Mariste");
-        Client client1 = new Client("Faye","Mariama",774101299, Role.CLIENT,"client2","passer","Mariama@gmail.com",0,"Rufisque");
-        Client client2 = new Client("Sambe","Abdoul Aziz",771236910, Role.CLIENT,"client3","passer","AbdoulAzizSambe@gmail.com",0,"Thies");
-        Client client3 = new Client("Samb","ibrahima",771234567, Role.CLIENT,"client4","passer","Ibrahima@gmail.com",0,"Mariste");
+    public static void testerUpdateClient(){
+        Client client = new Client(2,"Sadio","Abdoul Aziz",778392552, Role.CLIENT,"client1","passer","AbdoulAzizSadio@gmail.com",0,"Mariste",500000000);
+        Client client1 = new Client(3,"Faye","Mariama",774101299, Role.CLIENT,"client2","passer","Mariama@gmail.com",0,"Rufisque",2000000000);
+        Client client2 = new Client(4,"Sambe","Abdoul Aziz",771236910, Role.CLIENT,"client3","passer","AbdoulAzizSambe@gmail.com",0,"Thies",600000000);
+        Client client3 = new Client(5,"Samb","ibrahima",771234567, Role.CLIENT,"client4","passer","Ibrahima@gmail.com",0,"Mariste",950000000);
 
         ClientModele clientModele = new ClientModele();
-        clientModele.create(client);
-        clientModele.create(client1);
-        clientModele.create(client2);
-        clientModele.create(client3);
+        clientModele.update(client);
+        clientModele.update(client1);
+        clientModele.update(client2);
+        clientModele.update(client3);
         clientModele.lister();
     }
 
@@ -117,6 +116,12 @@ public class MainTest1 {
 
         ReservationModele reservationModele =new ReservationModele();
         reservationModele.update(reservation);
+    }
+
+    public static void testerDeleteReservation(){
+        ReservationModele reservationModele = new ReservationModele();
+        //reservationModele.delete(5);
+        reservationModele.delete(7);
     }
 
     //Test Chauffeur

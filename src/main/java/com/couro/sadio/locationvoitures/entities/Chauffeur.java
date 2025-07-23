@@ -14,7 +14,6 @@ public class Chauffeur {
     private int telephone;
     private boolean dispo;
     private double tarif;
-    private double prixParJour;
 
 
     // Constructeurs
@@ -57,9 +56,6 @@ public class Chauffeur {
         return id;
     }
 
-    public double getPrixParJour() {
-        return prixParJour;
-    }
 
 
     public void setId(int id) {
@@ -102,9 +98,6 @@ public class Chauffeur {
         return tarif;
     }
 
-    public void setTarif(double tarif) {
-        this.tarif = tarif;
-    }
 
     @Override
     public String toString() {

@@ -1,13 +1,8 @@
 package com.couro.sadio.locationvoitures.controller.clientController;
 
-import com.couro.sadio.locationvoitures.dao.impl.HibernateChauffeurDaoImpl;
-import com.couro.sadio.locationvoitures.dao.impl.HibernateReservationDaoImpl;
-import com.couro.sadio.locationvoitures.dao.impl.HibernateVehiculeDaoImpl;
 import com.couro.sadio.locationvoitures.entities.*;
-import com.couro.sadio.locationvoitures.modele.ChauffeurModele;
-import com.couro.sadio.locationvoitures.modele.FactureModele;
-import com.couro.sadio.locationvoitures.modele.ReservationModele;
-import com.couro.sadio.locationvoitures.modele.VehiculeModele;
+import com.couro.sadio.locationvoitures.interfaces.ControlledScreen;
+import com.couro.sadio.locationvoitures.modele.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -15,7 +10,7 @@ import javafx.scene.control.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class ClientReservationController {
+public class ClientReservationController implements ControlledScreen {
 
     @FXML private ComboBox<Vehicule> vehiculeCombo;
     @FXML private DatePicker dateDebutPicker;
@@ -32,20 +27,17 @@ public class ClientReservationController {
     private final ChauffeurModele chauffeurDao = new ChauffeurModele();
     private final ReservationModele reservationDao = new ReservationModele();
 
+    private Utilisateur userActuel;
     private Client clientActuel;
-
-    public void setClient(Client client) {
-        this.clientActuel = client;
-    }
 
     @FXML
     public void initialize() {
-        // Chargement des véhicules
-        List<Vehicule> vehicules = vehiculeDao.lister();
+        // Chargement des véhicules disponibles seulement
+        List<Vehicule> vehicules = vehiculeDao.lister(); // ou vehiculeDao.lister() si pas de méthode listerDisponibles()
         vehiculeCombo.setItems(FXCollections.observableArrayList(vehicules));
 
-        // Chargement des chauffeurs disponibles
-        List<Chauffeur> chauffeurs = chauffeurDao.lister();
+        // Chargement des chauffeurs disponibles seulement
+        List<Chauffeur> chauffeurs = chauffeurDao.lister(); // ou chauffeurDao.lister() si pas de méthode listerDisponibles()
         chauffeurCombo.setItems(FXCollections.observableArrayList(chauffeurs));
 
         // État initial
@@ -59,6 +51,9 @@ public class ClientReservationController {
             chauffeurCombo.setDisable(!newVal);
             montantChauffeurLabel.setText(newVal ? "À calculer" : "0 FCFA");
         });
+
+        // NE PAS METTRE LE NOM ICI - clientActuel est encore null
+        // Le nom sera mis à jour dans setUserData()
     }
 
     @FXML
@@ -74,8 +69,12 @@ public class ClientReservationController {
         }
 
         int jours = (int) java.time.temporal.ChronoUnit.DAYS.between(debut, fin);
+        if (jours == 0) {
+            jours = 1; // Minimum 1 jour pour la location
+        }
+
         double montantVehicule = v.getTarif() * jours;
-        double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getPrixParJour() * jours : 0;
+        double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getTarif() * jours : 0;
 
         montantVehiculeLabel.setText(montantVehicule + " FCFA");
         montantChauffeurLabel.setText(montantChauffeur + " FCFA");
@@ -84,6 +83,12 @@ public class ClientReservationController {
 
     @FXML
     public void validerReservation() {
+        // Vérifier que le client est bien initialisé
+        if (clientActuel == null) {
+            showAlert("Erreur", "Erreur d'initialisation du client. Veuillez fermer et rouvrir la fenêtre.");
+            return;
+        }
+
         Vehicule v = vehiculeCombo.getValue();
         Chauffeur c = chauffeurCombo.getValue();
         LocalDateTime debut = dateDebutPicker.getValue() != null ? dateDebutPicker.getValue().atStartOfDay() : null;
@@ -107,9 +112,8 @@ public class ClientReservationController {
             jours = 1; // Minimum 1 jour pour la location
         }
 
-        // Utilisation des bonnes méthodes selon les entités
-        double montantVehicule = v.getTarif() * jours; // Vehicule utilise getTarif(), pas getPrixParJour()
-        double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getTarif() * jours : 0; // Chauffeur utilise getTarif(), pas getPrixParJour()
+        double montantVehicule = v.getTarif() * jours;
+        double montantChauffeur = (avecChauffeurCheck.isSelected() && c != null) ? c.getTarif() * jours : 0;
 
         // Création de la réservation selon le constructeur approprié
         Reservation reservation;
@@ -137,6 +141,12 @@ public class ClientReservationController {
                 chauffeurDao.update(c);
             }
 
+            // Création de la facture
+            FactureModele factureModele = new FactureModele();
+            Facture facture = new Facture(reservation, reservation.getMontantTotale(),
+                    reservation.getDate(), StatutFacture.EN_ATTENTE);
+            factureModele.create(facture);
+
             showAlert("Succès", "Votre réservation a été enregistrée avec succès !");
             resetForm();
 
@@ -144,10 +154,6 @@ public class ClientReservationController {
             showAlert("Erreur", "Une erreur s'est produite lors de l'enregistrement : " + e.getMessage());
             e.printStackTrace();
         }
-
-        FactureModele factureModele = new FactureModele();
-        Facture facture = new Facture(reservation,reservation.getMontantTotale(),reservation.getDate(),StatutFacture.EN_ATTENTE);
-        factureModele.create(facture);
     }
 
     private void resetForm() {
@@ -167,5 +173,24 @@ public class ClientReservationController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @Override
+    public void setUserData(Utilisateur user) {
+        this.userActuel = user;
+
+        // Solution 1 : Cast direct si l'utilisateur connecté EST un client
+        if (user instanceof Client) {
+            this.clientActuel = (Client) user;
+        } else {
+            // Solution 2 : Recherche en base si nécessaire
+            ClientModele clientModele = new ClientModele();
+            this.clientActuel = clientModele.getClientConnecteByUser(user);
+        }
+    }
+
+    // Méthode utilitaire pour la compatibilité
+    public void setClient(Utilisateur user) {
+        setUserData(user);
     }
 }

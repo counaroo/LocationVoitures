@@ -118,7 +118,8 @@ public class FormClientController {
                             MotDePasseTextField.getText(),
                             EmailTextField.getText(),
                             0, // Points de fidélité initiaux
-                            AdresseTextField.getText()
+                            AdresseTextField.getText(),
+                            50000000
                     );
 
                     // Création du client

@@ -18,24 +18,28 @@ public class Client extends Utilisateur{
     @OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
     private List<Reservation> reservations = new ArrayList<>();
 
+    private double portefeuille;
+
     //Constructeur
     public Client() {
     }
 
-    public Client(String nom, String prenom, int telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse) {
+    public Client(String nom, String prenom, int telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse, double portefeuille) {
         super(nom, prenom, telephone, role, login, motDePasse);
         this.email = email;
         this.pointsFidelite = pointsFidelite;
         this.adresse = adresse;
         this.setRole(Role.CLIENT);
+        this.portefeuille = portefeuille;
     }
 
-    public Client(int id, String nom, String prenom, int telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse) {
+    public Client(int id, String nom, String prenom, int telephone, Role role, String login, String motDePasse, String email, int pointsFidelite, String adresse, double portefeuille) {
         super(id, nom, prenom, telephone, role, login, motDePasse);
         this.email = email;
         this.pointsFidelite = pointsFidelite;
         this.adresse = adresse;
         this.setRole(Role.CLIENT);
+        this.portefeuille = portefeuille;
     }
 
     //Getter and setter
@@ -75,6 +79,14 @@ public class Client extends Utilisateur{
     public void addReservation(Reservation reservation){
         reservations.add(reservation);
         reservation.setClient(this);
+    }
+
+    public double getPortefeuille() {
+        return portefeuille;
+    }
+
+    public void setPortefeuille(double portefeuille) {
+        this.portefeuille = portefeuille;
     }
 
     @Override

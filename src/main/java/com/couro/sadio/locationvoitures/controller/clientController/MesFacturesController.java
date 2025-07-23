@@ -5,14 +5,18 @@ import com.couro.sadio.locationvoitures.entities.*;
 import com.couro.sadio.locationvoitures.interfaces.ControlledScreen;
 import com.couro.sadio.locationvoitures.modele.ClientModele;
 import com.couro.sadio.locationvoitures.modele.FactureModele;
+import com.couro.sadio.locationvoitures.modele.ReservationModele;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class MesFacturesController implements ControlledScreen {
@@ -22,10 +26,13 @@ public class MesFacturesController implements ControlledScreen {
     @FXML private TableColumn<Facture, Double> colMontant;
     @FXML private TableColumn<Facture, Integer> colReservation;
     @FXML private TableColumn<Facture, String> colStatut;
+    @FXML private TableColumn<Facture, String> colDate;
 
     private final FactureModele factureDao = new FactureModele();
 
     private Utilisateur clientActuel;
+
+    private Facture factureSelectionne;
 
     // Méthode pour définir le client actuel
     public void setClient(Client client) {
@@ -40,6 +47,9 @@ public class MesFacturesController implements ControlledScreen {
 
         // Chargement initial (sera mis à jour quand le client sera défini)
         chargerFacturesClient();
+        factureTable.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            factureSelectionne = newVal;
+        });
     }
 
     private void configureColumns() {
@@ -77,6 +87,16 @@ public class MesFacturesController implements ControlledScreen {
                     ? reservation.getStatut().toString()
                     : "INCONNU";
             return new SimpleStringProperty(statut);
+        });
+
+        colDate.setCellValueFactory(cellData -> {
+            LocalDateTime dateFacture = cellData.getValue().getDateFacture();
+            if (dateFacture != null) {
+                // Format de la date : dd/MM/yyyy HH:mm
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+                return new SimpleStringProperty(dateFacture.format(formatter));
+            }
+            return new SimpleStringProperty("N/A");
         });
     }
 
@@ -126,13 +146,69 @@ public class MesFacturesController implements ControlledScreen {
 
     @Override
     public void setUserData(Utilisateur user) {
-        this.clientActuel = user;
+
         if (user != null) {
-            // Récupérer les informations du client connecté
+            // ✅ Récupérer directement le client correspondant
             ClientModele clientModele = new ClientModele();
             this.clientActuel = clientModele.getClientConnecteByUser(user);
-            //chargerDonneesClient();
+
+            // Charger les factures du client
+            chargerFacturesClient();
+        }
+    }
+
+    public void payerFacture(ActionEvent event) {
+        if (factureSelectionne == null) {
+            showAlert("Veuillez sélectionner une facture à payer.");
+            return;
         }
 
+        ClientModele clientModele = new ClientModele();
+        Client client = clientModele.getClientConnecteByUser(clientActuel);
+
+        if (client.getPortefeuille() < factureSelectionne.getMontant()) {
+            showAlert("Vous n'avez pas le solde nécessaire");
+        } else {
+            try {
+                // Mise à jour du statut de la facture
+                factureSelectionne.setStatutFacture(StatutFacture.PAYEE);
+
+                // Sauvegarder la facture mise à jour
+                FactureModele factureModele = new FactureModele();
+                factureModele.update(factureSelectionne);
+
+                // Déduire le montant du portefeuille du client
+                client.setPortefeuille(client.getPortefeuille() - factureSelectionne.getMontant());
+                clientModele.update(client);
+
+                // Mettre à jour le statut de la réservation si elle existe
+                if (factureSelectionne.getReservation() != null) {
+                    ReservationModele reservationModele = new ReservationModele();
+                    Reservation reservation = reservationModele.read(factureSelectionne.getReservation().getId());
+                    reservation.setStatut(StatutReservation.CONFIRMEE);
+                    reservationModele.update(reservation); // ⚠️ AJOUT IMPORTANT : sauvegarder la réservation
+                }
+
+                // Actualiser l'affichage
+                chargerFacturesClient();
+
+                showAlert("Paiement effectué avec succès !");
+
+            } catch (Exception e) {
+                showAlert("Erreur lors du paiement : " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void annulerFacture(ActionEvent event) {
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
